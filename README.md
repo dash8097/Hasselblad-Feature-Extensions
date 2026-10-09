@@ -12,16 +12,6 @@ Left: **400 MP at 400%**. Right: **100 MP at 800%**, at approximately matched su
 
 [查看完整截图和对比说明 / Full screenshot and comparison notes](docs/showcase/X2D_408MP_DETAIL_COMPARISON.md)。这是开发版 JPEG 的实拍展示，包含锐化处理；不代表受控实验测得的分辨率倍数，也不代表本公开仓库已提供完整安装包。
 
-## 交流群 / Community
-
-欢迎加入微信 **哈苏特调许愿 1群**，交流使用体验和功能想法。
-
-<a href="docs/community/assets/wechat-group.jpg"><img src="docs/community/assets/wechat-group.jpg" alt="哈苏特调许愿 1群微信交流群二维码" width="320"></a>
-
-[打开二维码原图及说明 / Full-size QR code and joining notes](docs/community/README.md)。图片标注 **10 月 10 日前有效**；失效后请以维护者更新的二维码为准。
-
-Join our WeChat community to discuss the project and suggest features. The supplied QR image states it is valid **before October 10**; use the maintainer's updated code after expiry.
-
 ## Contents and status
 
 | Area | Entry | Public scope |
