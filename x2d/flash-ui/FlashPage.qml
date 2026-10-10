@@ -123,7 +123,7 @@ Rectangle {
         return true
     }
     function requestFlashSync() {
-        // 仅供未来曝光适配层调用。无线同步关闭时不触及原厂热靴同步流程。
+        // 仅供未来曝光适配层调用。无线同步关闭时不触发外部同步流程。
         if (!flashSyncAllowed) return false
         flashSyncRequested()
         return true

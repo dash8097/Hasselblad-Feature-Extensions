@@ -2,7 +2,7 @@
  * Copyright (c) 2026 Hasselblad Feature Extensions contributors
  */
 /* 分块合成结果的双消费者交接核心。调用者持锁；不分配内存、不写文件、
- * 不控制相机。原厂缓冲引用由 release 回调释放，绝不因一条分支完成提前释放。
+ * 不控制相机。调用方缓冲引用由 release 回调释放，绝不因一条分支完成提前释放。
  * 这不是已接入相机的拍摄路径。 */
 #ifndef PIXEL_CHUNK_FANOUT_H
 #define PIXEL_CHUNK_FANOUT_H

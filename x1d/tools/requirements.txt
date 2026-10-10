@@ -1,4 +1,0 @@
-pycryptodome==3.23.0
-capstone==5.0.6
-pyelftools==0.32
-unicorn==2.1.4

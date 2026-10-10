@@ -1,12 +1,9 @@
-# 来源与许可核对
+# 来源与许可
 
-公开文件须核对用途、创作依据／上游、固定版本、许可、修改、通知与依赖。位于源码目录或公开可下载不等于可自由再分发。
+项目原创组件根据现有创作说明、源码内容、依赖与用途筛选；来源未充分确认或仍依赖厂商实现的旧候选不纳入当前公开清单。许可注释不能替代来源审核。
 
-- 原创：确认没有第三方表达、资源或设备数据，再适用项目许可。
-- 开源：保留版权和许可，不统一改标 MIT；模型参数确认同版本发布依据。
-- 厂商与私人材料：本批不新增固件、提取物、内部分析、照片、日志、凭据或私人路径。
-- 验证：区分模拟、离线组件与相机验收，明确缺口。
+检测库的五个上游文件（四份源码与 LICENSE）已与固定上游提交逐字节复核一致。模型参数来自同一开源版本，版权与 BSD-3-Clause 声明完整保留，见[来源说明](../../X1D2/face-afs/vendor/libfacedetection/SOURCE.md)。
 
-见 [像素审核](../../publication/x2d-update-review.json)与[补充审核](../../publication/x1dii-update-review.json)。文档清理不会删除 Git 历史，也不代表旧源码整体审查完成。
+[逐文件清单](../../publication/public-allowlist.json)记录当前内容哈希和来源类别。新增或修改必须重新审核；清单不授予第三方权利。
 
-许可与研究用途不能保证无争议，参考 [GitHub 许可说明](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)与 [WIPO 常见问题](https://www.wipo.int/en/web/copyright/faq-copyright)。
+本次仅缩小公开范围，未做专利或全面法律审查，不作无争议保证。旧提交仍保留，参见[历史限制](SANITIZATION.md)。

@@ -1,17 +1,12 @@
-# 目录与阅读索引
+# 目录说明
 
-| 路径 | 内容 |
-| --- | --- |
-| `x1d/` | 第一代 X1D 组件与历史候选 |
-| `X1D2/` | X1D II 人脸优先片段与开源检测库 |
-| `x2d/` | X2D 像素、图像工具、策略与界面 |
-| `x2d2/` | X2D II 主题索引，区别于 X1D II |
-| `scripts/` | 显式输入／输出的验证入口 |
-| `docs/build/` | 构建方法和依赖说明 |
-| `docs/publication/` | 公开范围、状态和来源说明 |
-| `docs/project/` | 全项目目录与规范 |
-| `publication/` | 机器可读的来源、许可和验证摘要 |
+- x2d/CodeTests/pixel_shift_rgb/：通用数值内核、自造输入原型和队列测试。
+- x2d/subject-tracking/ 与 x2d/CodeTests/subject_tracking/：灰度跟踪及合成测试。
+- x2d/CodeTests/face_edge_fix/：独立人眼偏好策略。
+- x2d/flash-ui/：原创离线 QML 与 SVG。
+- x1d/shutter-effects/：原创动画与抽象音频路由。
+- X1D2/face-afs/vendor/libfacedetection/：保留原许可的开源检测库。
+- scripts/：公开范围检查与离线构建入口。
+- publication/：当前逐文件允许清单和校验值。
 
-README 说明用途、依赖、方法与限制。`CodeTests` 是代码契约，`FunctionalTests` 是功能用例，`ProjectScenarioTests` 是完整场景；仅有实际材料时建立目录。
-
-旧主题页保留原路径，不公开施工细节。生成物不进入源码清单，相对链接应在独立检出中成立。
+机型目录名称只保留来源组织信息，不表示提供设备适配。当前不公开机内发布器、安装器或历史研究材料。

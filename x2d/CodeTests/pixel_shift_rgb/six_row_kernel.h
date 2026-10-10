@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: MIT
  * Copyright (c) 2026 Hasselblad Feature Extensions contributors
  */
-/* 六合一的原厂数值域逐行计算；文件与内存路径共用，保持偶数舍入与 GRBG。
+/* 六合一的无符号 16 位数值域逐行计算；文件与内存路径共用，保持偶数舍入与 GRBG。
  * 输入每行四个整数位移通道，以及两帧半像素采样的三通道/有效位。 */
 #ifndef SIX_ROW_KERNEL_H
 #define SIX_ROW_KERNEL_H

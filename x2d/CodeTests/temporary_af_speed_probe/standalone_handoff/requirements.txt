@@ -1,5 +1,0 @@
-pyelftools==0.32
-capstone==5.0.6
-unicorn==2.1.4
-brotli==1.2.0
-dissect.extfs==3.14

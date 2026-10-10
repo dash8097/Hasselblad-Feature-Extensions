@@ -1,9 +1,0 @@
-{
-  "source": "device-install",
-  "originalFunction": 1,
-  "physicalKey": "AF/MF",
-  "temporary": true,
-  "imageSha256": "8d4de634bebc8268f6f24eec8744592600a9175dc3f0afc27499efa4cec0b928",
-  "installed": true,
-  "status": "READY"
-}

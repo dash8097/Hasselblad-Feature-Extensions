@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: MIT
  * Copyright (c) 2026 Hasselblad Feature Extensions contributors
  */
-// 离线候选：左右眼沿用原厂字段身份。尚未连接实际 AF 控制接口。
+// 离线候选：左右眼使用调用方给出的逻辑身份，不包含设备接口绑定。
 function create(preferred, faceId) {
     return {preferred:preferred, faceId:faceId, chosen:preferred,
             missingSince:-1, preferredSince:-1, lastTime:-1};

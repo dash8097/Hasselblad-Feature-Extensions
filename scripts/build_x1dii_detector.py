@@ -37,9 +37,7 @@ def main() -> int:
     out.mkdir(parents=True, exist_ok=True)
     report = {'passed': False, 'device_accessed': False,
               'scope': 'licensed detector build and synthetic blank image only',
-              'publisher_built': False,
-              'missing_publisher_headers': ['af_request.h', 'proxy_bridge.h',
-                                           'preview_resize.h', 'menu_control.h']}
+              'publisher_built': False}
     report_file = out / 'detector-validation.json'
 
     def save() -> None:

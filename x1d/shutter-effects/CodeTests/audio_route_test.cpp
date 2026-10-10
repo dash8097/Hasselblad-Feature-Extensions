@@ -10,7 +10,7 @@ struct Fake {
 };
 int main(){
     {Fake io;X1dAudioRoute<Fake> route(io);assert(route.acquire(3) && io.value==0 && io.level==3);assert(!route.acquire(3));assert(route.release() && io.value==1 && io.level==0);assert(route.release() && io.writes==2);}
-    // 冷启动时路由与音量均为零，不等于被原厂占用。
+    // 冷启动时路由与音量均为零，不等于被外部占用。
     {Fake io;io.value=0;X1dAudioRoute<Fake> route(io);assert(route.acquire(3) && io.level==3);assert(route.release() && io.value==0 && io.level==0);}
     {Fake io;io.readable=false;X1dAudioRoute<Fake> route(io);assert(!route.acquire(3) && io.writes==0 && io.levelWrites==0);}
     {Fake io;io.writable=false;X1dAudioRoute<Fake> route(io);assert(!route.acquire(3));io.writable=true;assert(route.release() && io.level==0);}

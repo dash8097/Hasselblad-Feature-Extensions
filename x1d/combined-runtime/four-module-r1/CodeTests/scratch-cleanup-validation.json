@@ -1,9 +1,0 @@
-{
-  "passed": true,
-  "sourceJournalLastSha256": "a54662fec43683a60e5b030b6f5cee0dd186af37c8a880553e2067939921733d",
-  "sourceSha256": "765eb16917448daa99758dfc483fbacb42c26d8ab8e693d3e0f3314d789a0dbb",
-  "cleanupWrites": 30,
-  "unknownScratchRejectedBeforeWrite": true,
-  "uncertainWriteNotRetried": true,
-  "hardwareRequests": 0
-}

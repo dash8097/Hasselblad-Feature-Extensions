@@ -1,9 +1,0 @@
-pycryptodome==3.23.0
-capstone==5.0.6
-pyelftools==0.32
-dissect.extfs==3.14
-dissect.cstruct==4.7
-dissect.util==3.24
-Brotli==1.2.0
-olefile==0.47
-pefile==2024.8.26

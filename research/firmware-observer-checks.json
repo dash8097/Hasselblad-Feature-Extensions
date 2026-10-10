@@ -1,7 +1,0 @@
-{
-  "status": "excluded_from_public_scope",
-  "reason": "按当前公开范围排除厂商固件内部实现、提取路径、符号与设备证据",
-  "inputs_bundled": false,
-  "component_available": false,
-  "notice": "旧工具依赖本记录时应视为缺少输入，不得据此标记验证通过。"
-}

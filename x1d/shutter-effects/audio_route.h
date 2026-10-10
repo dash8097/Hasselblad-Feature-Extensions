@@ -1,8 +1,8 @@
 #ifndef HBL_X1D_AUDIO_ROUTE_H
 #define HBL_X1D_AUDIO_ROUTE_H
 
-// X1D 1.25.0：先设置音量，再切扬声器。路由值不是占用锁。
-// 原厂播放仲裁由调用方负责；结束恢复现场，原厂抢占时交还恢复责任。
+// 抽象替身约定：先设置音量，再切换逻辑路由；路由值不是占用锁。
+// 播放仲裁由调用方负责；结束恢复现场，外部抢占时交还恢复责任。
 template<class Io> class X1dAudioRoute {
     Io &io;
     bool owned=false;

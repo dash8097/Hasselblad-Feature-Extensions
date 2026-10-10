@@ -59,7 +59,7 @@ Item {
         to: 1
         duration: 800
         easing.type: Easing.Linear
-        // 演示结束不控制相机；只保留纯黑底至原厂退出 曝光状态。
+        // 演示结束不控制相机；只保留纯黑底至调用方退出曝光状态。
     }
     Timer { id: watchdog; interval: 2000; onTriggered: root.finish("overlay_timeout") }
     Timer { running: true; interval: 80; onTriggered: root.priming=false }
