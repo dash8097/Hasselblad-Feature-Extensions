@@ -1,10 +1,3 @@
-# 离线像素算法
+# 像素处理组件
 
-保留项目自写的三个独立部分：
-- prototype.py：四幅调用方数组重建 RGB，提供自造图案。test_prototype.py 为三项纯内存测试。
-- six_row_kernel.h：六采样行数据的数值重建与偶数舍入。输入由调用方提供，不附带传感器布局或固件对象。
-- pixel_chunk_fanout.h：有界双消费者队列和引用释放策略；配套 C 测试使用合成数据。
-
-不提供真实拍摄、固件处理、厂家文件头、显影或设备相册接入，不将输出像素数量解释为实测光学分辨率。
-
-见[构建说明](../../../docs/build/BUILDABILITY.md)。本轮只运行三项 Python 测试，C 核心不宣称本次编译验收。
+`prototype.py` 提供四帧合成的人工场景模型；`capture_memory_merge.c`、`capture_memory_pipeline.h` 和 `pixel_chunk_fanout.h` 负责六帧逐行重建及双消费者生命周期。RAW 分块、缩放与轻度亮度锐化使用调用方提供的内存或回调。网格容量与按键编号由调用方显式传入。文件名中的历史前缀不表示厂商实现。

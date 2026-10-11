@@ -1,0 +1,196 @@
+[
+  {
+    "name": "factory_light_sharpen",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_factory_light_sharpen.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "factory_preview_scale",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_factory_preview_scale.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "factory_raw_stream",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_factory_raw_stream.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "factory_raw_tile",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_factory_raw_tile.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "four_hundred_policy",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_four_hundred_policy.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "heif_grid",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_heif_grid.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "pixel_chunk_fanout",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_pixel_chunk_fanout.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "pixel_mode_events",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_pixel_mode_events.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "pixel_render_route",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_pixel_render_route.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "pixel_shutter_policy",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_pixel_shutter_policy.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "capture_memory_merge",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_capture_memory_merge.c",
+      "x2d/CodeTests/pixel_shift_rgb/capture_memory_merge.c"
+    ],
+    "output_args": [
+      "synthetic-merge.bin"
+    ]
+  },
+  {
+    "name": "subject_tracker",
+    "kind": "cc",
+    "sources": [
+      "x2d/subject-tracking/subject_tracker.c",
+      "x2d/CodeTests/subject_tracking/test_subject_tracker.c"
+    ],
+    "includes": [
+      "x2d/subject-tracking"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "audio_route",
+    "kind": "c++",
+    "sources": [
+      "x1d/shutter-effects/CodeTests/audio_route_test.cpp"
+    ]
+  },
+  {
+    "name": "byte_budget",
+    "kind": "c++",
+    "sources": [
+      "x1d/candidates/replay-memory/CodeTests/byte_budget_test.cpp"
+    ]
+  },
+  {
+    "name": "latest_cache",
+    "kind": "c++",
+    "sources": [
+      "x1d/candidates/replay-memory/CodeTests/latest_cache_test.cpp"
+    ]
+  },
+  {
+    "name": "role_cache",
+    "kind": "c++",
+    "sources": [
+      "x1d/candidates/replay-memory/CodeTests/role_cache_test.cpp"
+    ]
+  },
+  {
+    "name": "coexist_core",
+    "kind": "c++",
+    "sources": [
+      "x1d/candidates/flash-wifi-coexist/CodeTests/core.test.cpp"
+    ]
+  },
+  {
+    "name": "persistent_settings",
+    "kind": "c++",
+    "sources": [
+      "x1d/combined-runtime/four-module-r1/persistent-r1/CodeTests/persistent_settings.test.cpp"
+    ]
+  },
+  {
+    "name": "radio_mode_policy",
+    "kind": "c++",
+    "sources": [
+      "x1d/combined-runtime/four-module-r1/persistent-r1/CodeTests/radio_mode_policy_test.cpp"
+    ]
+  },
+  {
+    "name": "prototype",
+    "kind": "python",
+    "source": "x2d/CodeTests/pixel_shift_rgb/test_prototype.py"
+  },
+  {
+    "name": "synthetic_af",
+    "kind": "python",
+    "source": "x1d/af-experiment/CodeTests/test_synthetic_curves.py"
+  },
+  {
+    "name": "blackout_analysis",
+    "kind": "python",
+    "source": "x2d/CodeTests/shutter-animation-preview/test_analyze_blackout.py"
+  },
+  {
+    "name": "mechanical_analysis",
+    "kind": "python",
+    "source": "x1d/wireless-flash/CodeTests/test_mechanical_timing_analysis.py"
+  }
+]

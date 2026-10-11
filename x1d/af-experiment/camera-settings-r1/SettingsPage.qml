@@ -1,0 +1,148 @@
+import QtQuick 2.5
+
+Rectangle {
+    id: page
+    objectName: "AfSettingsPage"
+    color: "black"
+    property bool pageActive: false
+    property var backend: typeof hblAf === "undefined" ? null : hblAf
+    property real unit: Math.min(width/640,height/480)
+    property var probeSpeeds: [5000,7000,9000,11000,13000]
+    property var fastSpeeds: [5000,10000,15000,20000]
+    property var fineSpeeds: [3000,4000,5000,6000,7000]
+    property var draft: [0,0,0]
+    property bool direction: false
+    property var advance: [65534,65534]
+    property int loadedRevision: 0
+    property bool dirty: false
+    readonly property bool connected: backend && backend.connected
+    readonly property bool busy: backend && backend.busy
+    signal backRequested()
+    function command(value) { if(backend) backend.command=JSON.stringify(value) }
+    function speedText(value) { return value===0?"跟随原厂":String(value) }
+    function factorySpeed(index) {
+        var next=draft.slice(0);next[index]=0;draft=next
+        if(index>0){var updated=advance.slice(0);updated[index-1]=65534;advance=updated}
+        dirty=true
+    }
+    function reloadDraft() {
+        if(!connected)return
+        draft=[backend.probe,backend.fast,backend.fine]
+        direction=backend.newDirection;advance=[backend.fastAdvanceMs,backend.fineAdvanceMs]
+        loadedRevision=backend.revision;dirty=false
+    }
+    function changeSpeed(index,delta) {
+        var next=draft.slice(0),choices=index===0?probeSpeeds:(index===1?fastSpeeds:fineSpeeds)
+        var target=next[index],i
+        if(target===0)target=choices[0]
+        else {
+        if(delta>0){for(i=0;i<choices.length;i++)if(choices[i]>target){target=choices[i];break}}
+        else {for(i=choices.length-1;i>=0;i--)if(choices[i]<target){target=choices[i];break}}
+        }
+        if(target===next[index])return
+        next[index]=target;draft=next;dirty=true
+        if(index>0){
+            var updated=advance.slice(0),presets=backend?(index===1?backend.fastPresets:backend.finePresets):null
+            var preset=presets?presets[choices.indexOf(target)]:65535
+            updated[index-1]=typeof preset==="number"?preset:65535;advance=updated
+        }
+    }
+    function changeAdvance(index,delta) {
+        var next=advance.slice(0)
+        next[index]=next[index]>=65534?0:Math.max(0,Math.min(200,next[index]+delta));advance=next;dirty=true
+    }
+    onPageActiveChanged: command({op:"visible",value:pageActive})
+    Component.onCompleted: command({op:"visible",value:pageActive})
+    Component.onDestruction: command({op:"visible",value:false})
+    Timer {
+        interval: 200; running: page.pageActive; repeat: true
+        onTriggered: {
+            if(page.connected && !page.busy && page.draft[0]===page.backend.probe && page.draft[1]===page.backend.fast &&
+               page.draft[2]===page.backend.fine && page.direction===page.backend.newDirection &&
+               page.advance[0]===page.backend.fastAdvanceMs && page.advance[1]===page.backend.fineAdvanceMs)page.dirty=false
+            if(page.connected && !page.dirty && page.loadedRevision!==page.backend.revision)page.reloadDraft()
+        }
+    }
+    Item {
+        width: 640; height: 480; scale: page.unit; transformOrigin: Item.TopLeft
+        x: (parent.width-640*page.unit)/2; y:(parent.height-480*page.unit)/2
+        Text { x:24; y:14; text:"AF 设置"; color:"white"; font.pixelSize:28 }
+        Text { x:24; y:51; text:"速度为命令幅值 · 两项提前量均为绝对毫秒"; color:"#999999"; font.pixelSize:16 }
+        Rectangle {
+            x:556; y:14; width:60; height:42; radius:4; color:"#222222"
+            Text { anchors.centerIn:parent; text:"返回"; color:"white"; font.pixelSize:18 }
+            MouseArea { anchors.fill:parent; onClicked:page.backRequested() }
+        }
+        Column {
+            x:24; y:82; spacing:8
+            Repeater {
+                model: ["判向试探","快速扫描","原厂精扫"]
+                Rectangle {
+                    width:592; height:index===0?52:88; color:"#171717"; radius:4
+                    Text { x:14; y:5; text:modelData; color:"white"; font.pixelSize:21 }
+                    Text {
+                        x:14; y:31; color:"#969696"; font.pixelSize:13
+                        text:page.connected ? "本轮配置 "+page.speedText([page.backend.activeProbe,page.backend.activeFast,page.backend.activeFine][index]) : "本轮配置 未读回"
+                    }
+                    Text {
+                        x:215; y:30; text:"恢复原厂"; color:"#bbbbbb"; font.pixelSize:13
+                        MouseArea { anchors.fill:parent; anchors.margins:-4; enabled:!page.busy; onClicked:page.factorySpeed(index) }
+                    }
+                    Rectangle {
+                        x:312; y:4; width:55; height:44; color:"#2b2b2b"; radius:3
+                        Text { anchors.centerIn:parent; text:page.draft[index]===0?"手动":"−"; color:"white"; font.pixelSize:page.draft[index]===0?16:27 }
+                        MouseArea { anchors.fill:parent; enabled:!page.busy; onClicked:page.changeSpeed(index,-1) }
+                    }
+                    Text { x:370; width:145; height:52; horizontalAlignment:Text.AlignHCenter; verticalAlignment:Text.AlignVCenter; text:page.speedText(page.draft[index]); color:"white"; font.pixelSize:page.draft[index]===0?23:27 }
+                    Rectangle {
+                        x:521; y:4; width:55; height:44; color:"#2b2b2b"; radius:3
+                        Text { anchors.centerIn:parent; text:page.draft[index]===0?"手动":"+"; color:"white"; font.pixelSize:page.draft[index]===0?16:27 }
+                        MouseArea { anchors.fill:parent; enabled:!page.busy; onClicked:page.changeSpeed(index,1) }
+                    }
+                    Item {
+                        x:14; y:53; width:562; height:31; visible:index>0
+                        property int advanceIndex: Math.max(0,index-1)
+                        Text { y:5; text:(index===1?"切换提前补偿":"停止提前补偿")+(page.advance[parent.advanceIndex]===65534?" · 保留原厂行为":" · 仅保存，未接通"); color:"#999999"; font.pixelSize:13 }
+                        Rectangle {
+                            x:298; width:55; height:31; color:"#252525"; radius:3
+                            Text { anchors.centerIn:parent; text:"−"; color:"#aaaaaa"; font.pixelSize:21 }
+                            MouseArea { anchors.fill:parent; enabled:!page.busy; onClicked:page.changeAdvance(index-1,-5) }
+                        }
+                        Text { x:356; width:145; height:31; horizontalAlignment:Text.AlignHCenter; verticalAlignment:Text.AlignVCenter; text:page.advance[parent.advanceIndex]===65535?"待估算":(page.advance[parent.advanceIndex]===65534?"原厂":page.advance[parent.advanceIndex]+" ms"); color:"#bbbbbb"; font.pixelSize:20 }
+                        Rectangle {
+                            x:507; width:55; height:31; color:"#252525"; radius:3
+                            Text { anchors.centerIn:parent; text:"+"; color:"#aaaaaa"; font.pixelSize:21 }
+                            MouseArea { anchors.fill:parent; enabled:!page.busy; onClicked:page.changeAdvance(index-1,5) }
+                        }
+                    }
+                }
+            }
+        }
+        Text { x:38; y:346; text:"抗噪判向（实验）"; color:"white"; font.pixelSize:20 }
+        Rectangle {
+            x:470; y:338; width:130; height:42; radius:21; color:page.direction?"#eeeeee":"#292929"
+            Text { anchors.centerIn:parent; text:page.direction?"开启":"关闭"; color:page.direction?"black":"white"; font.pixelSize:20 }
+            MouseArea { anchors.fill:parent; enabled:!page.busy; onClicked:{page.direction=!page.direction;page.dirty=true} }
+        }
+        Text {
+            x:24; y:385; width:592; elide:Text.ElideRight; font.pixelSize:15
+            color:page.connected?"#bbbbbb":"#d8a77c"
+            text:page.backend?page.backend.statusText:"AF 接口未加载"
+        }
+        Rectangle {
+            x:24; y:418; width:172; height:44; radius:4; color:"#222222"
+            Text { anchors.centerIn:parent; text:"重新读取"; color:"white"; font.pixelSize:19 }
+            MouseArea { anchors.fill:parent; enabled:!page.busy; onClicked:{page.dirty=false;page.loadedRevision=0;page.command({op:"read"})} }
+        }
+        Text { x:211; y:426; width:195; text:page.dirty?"有未保存修改":""; color:"#a9a9a9"; font.pixelSize:17 }
+        Rectangle {
+            x:414; y:418; width:202; height:44; radius:4
+            color:page.connected && !page.busy?"#eeeeee":"#333333"
+            Text { anchors.centerIn:parent; text:page.busy?"等待相机确认":"保存配置"; color:page.connected && !page.busy?"black":"#aaaaaa"; font.pixelSize:19 }
+            MouseArea {
+                anchors.fill:parent; enabled:page.connected && !page.busy
+                onClicked:page.command({op:"apply",probe:page.draft[0],fast:page.draft[1],fine:page.draft[2],newDirection:page.direction,fastAdvanceMs:page.advance[0],fineAdvanceMs:page.advance[1]})
+            }
+        }
+    }
+}

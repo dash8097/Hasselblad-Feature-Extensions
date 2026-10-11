@@ -1,39 +1,37 @@
 # Hasselblad Feature Extensions
 
-独立、非官方的离线算法与界面示例项目，与相机厂商没有隶属或认可关系。名称仅用于说明研究背景。
+相机扩展项目的源码组件：像素合成、图像缓存、目标跟踪、交互状态机和 Qt Quick 界面。
+这是独立、非官方项目，与相机厂商没有隶属或认可关系。
 
-当前公开版只保留项目原创离线组件，以及保留原许可的开源检测库。历史机内候选、安装器、固件处理链和设备接入代码已从当前版本撤下。本仓库没有可安装的相机更新包。
+| 模块 | 内容 |
+| --- | --- |
+| [像素处理](x2d/CodeTests/pixel_shift_rgb/README.md) | 四帧与六帧重建、双消费者队列、RAW 分块、预览缩放及输出策略 |
+| [缓存与生命周期](x1d/candidates/replay-memory/README.md) | 内存预算、带所有权的缓存、过期结果拒绝 |
+| [交互与设置](x1d/wifi-region/temporary-ui/README.md) | 触点所有权、焦点队列、页面池和参数控件 |
+| [引闪界面](x2d/flash-ui/README.md) | 本地参数草稿、频道与分组编辑、自绘图标 |
+| [跟踪](x2d/subject-tracking/README.md) | 灰度目标匹配和置信度处理 |
+| [动画与音频策略](x1d/shutter-effects/README.md) | 曝光动画、抽象音频路由及状态恢复 |
+| [开源检测库](X1D2/face-afs/vendor/libfacedetection/SOURCE.md) | 带原始许可的 libfacedetection 源码与模型 |
 
-| 内容 | 入口 | 当前范围 |
-| --- | --- | --- |
-| 像素合成 | [算法说明](x2d/CodeTests/pixel_shift_rgb/README.md) | 四帧重建、六采样逐行内核、有界双消费者队列 |
-| 灰度目标跟踪 | [跟踪组件](x2d/subject-tracking/README.md) | 调用方提供图像和目标；不操作镜头 |
-| 人眼偏好 | [离线策略](x2d/CodeTests/face_edge_fix/README.md) | 左右选择、丢失延迟与回退 |
-| 引闪界面 | [离线 QML](x2d/flash-ui/README.md) | 原创页面与 SVG，无设备后端 |
-| 动画与声音路由 | [离线组件](x1d/shutter-effects/README.md) | 程序绘制动画、抽象后端与替身测试 |
-| 开源检测库 | [来源与许可](X1D2/face-afs/vendor/libfacedetection/SOURCE.md) | 固定上游 libfacedetection，保留 BSD-3-Clause 声明 |
+本仓库提供组件源码及离线测试，当前没有完整相机安装包。目录中的历史版本保留各自接口；使用时以对应源码和测试为准。
+机型与固件版本注释说明设计背景，不能替代当前设备的兼容性验证。
 
-当前版本不附带厂商固件、提取物、解密工具、密钥、内部地址或补丁装载链，也不提供设备日志、样片、厂商图标、字体或录音。不能将离线算法结果解释为机内验收或画质提升的测量。
+## 使用
 
-运行只读公开范围检查：
+安装 Python 3.10 或更高版本及 Zig 0.13 工具链，在仓库根目录执行：
 
-    python -B scripts/audit_publication.py
+```text
+python -B scripts/check_sources.py
+python -B scripts/test_components.py --compiler <zig路径> --output outputs/tests
+```
 
-离线组件的显式构建入口：
+Qt Quick 组件使用 Qt 5/6 的公开 API；桌面预览测试使用 PySide6，具体依赖见[构建说明](docs/build/BUILDABILITY.md)。
+源码导航见[组件目录](docs/SOURCE_INDEX.md)，测试覆盖见[验证说明](docs/VALIDATION.md)。
 
-    python -B scripts/build_pixel_research.py --compiler zig --build-dir ./outputs/offline
-    python -B scripts/build_x1dii_detector.py --compiler zig --build-dir ./outputs/detector
-
-本次完成文件清单、哈希、依赖、相对链接及 Python 语法检查，并运行三项纯内存合成测试；C/C++ 编译与界面渲染未在本次清理中重跑。见[公开状态](docs/publication/PUBLICATION_STATUS.md)和[构建说明](docs/build/BUILDABILITY.md)。
-
-原创部分适用 [MIT](LICENSE)，第三方检测库维持原许可。许可声明不覆盖未获授权的第三方内容。清理是发布范围控制，不是法律无风险保证。
-
-**当前清理不改写旧提交，旧内容仍可能经 Git 历史访问。** 详见[清理记录](docs/publication/SANITIZATION.md)。后续公开变更须重新审查并更新[逐文件清单](publication/public-allowlist.json)。
+原创代码采用 [MIT 许可](LICENSE)；第三方组件维持其原有许可与版权声明。
 
 ## English
 
-Independent, unofficial offline algorithms and UI examples, not affiliated with or endorsed by the camera manufacturer. No installable camera update is provided.
-
-The current tree contains selected original pixel-processing, tracking, target-policy and UI components, plus the separately licensed libfacedetection library. Firmware processing, decryption, device bindings, installers and private research material are excluded. Original work remains MIT; third-party notices remain intact.
-
-This cleanup does not rewrite Git history. Older content may remain accessible through past commits. Offline checks are not camera acceptance tests or legal clearance.
+Independent camera-extension source components for pixel processing, bounded caches, tracking, state machines and Qt Quick UI.
+Use the explicit offline test entry points above. This repository provides component sources, not a complete installable camera update.
+Original code is MIT licensed; third-party code keeps its original license and attribution.

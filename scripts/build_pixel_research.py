@@ -35,7 +35,7 @@ def main():
     ]
     for name, driver, sources, flags in cases:
         binary = output / (name + ('.exe' if os.name == 'nt' else ''))
-        subprocess.run([args.compiler, driver, '-O2'] + list(map(str, sources)) +
+        subprocess.run([args.compiler, driver, '-O2', '-UNDEBUG'] + list(map(str, sources)) +
                        flags + ['-o', str(binary)], env=env, check=True, timeout=180)
         subprocess.run([str(binary)], check=True, timeout=60)
     print('PASS: synthetic Python and three host component checks; no device access')

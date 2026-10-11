@@ -1,25 +1,3 @@
-# Offline Flash UI
+# 引闪设置界面
 
-Original group, power and settings pages. The main page edits drafts and emits QML signals; no device, USB or radio adapter is provided.
-
-Six icons use original SVG geometry; existing group and lamp shapes are drawn with QML. No extracted manufacturer icons or fonts are bundled. Installed system fonts are used. `Preview.qml` stays disconnected and test firing is unavailable; UI state does not confirm a light received a command.
-
-With Python 3.11 and PySide6 6.4.1, `CodeTests/smoke.py` checked five page states and all icons. A local font may be specified for screenshots. On-camera integration, persistence and radio transmission were not verified. See [index](../../README.md).
-
----
-
-## 中文
-
-本模块保留项目自写的分组、功率和设置界面。主页面仅更新草稿并发出 QML 信号，本目录没有设备、USB 或无线适配层。
-
-六种图标（返回、闪光、电源、进入、选中标记、设置）在当前直接用 SVG 几何路径编写，替换十处旧图片引用；没有描摹或转换旧图片。设置图标改用滑杆，强调色采用青色。现有灯泡和分组图形由 QML 几何绘制。
-
-字体使用本机系统字体，不附带字体文件。`Preview.qml` 默认断开设备，试闪不可用；用户不应把离线界面状态理解为灯端已收到指令。
-
-### 测试
-
-使用 Python 3.11 和 PySide6 6.4.1 运行 `CodeTests/smoke.py`。分组、设置、组选取、功率和无线参数五个界面状态切换及所有图标加载通过。截图测试环境可显式传入本机字体，仅用于本地渲染。
-
-没有验证真实机内页面接入、持久化或无线发送。本模块不包含这些实现，也不自动读取相机。
-
-当前组件与机型关系见 [公开索引](../../README.md)。
+Qt Quick 页面提供分组、功率、频道与无线 ID 编辑，图标为项目自绘 SVG。连接状态和提交动作通过属性与信号交给调用方。`Preview.qml` 可在桌面加载本地页面。

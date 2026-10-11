@@ -1,17 +1,21 @@
-# 离线检查与构建
+# 构建与运行
 
-Python 3.11+。只读检查当前已跟踪文件：
+基础检查使用 Python 3.10+ 标准库。`scripts/test_components.py` 显式接受 Zig 0.13 的路径和输出目录；编译缓存与结果都写入该输出目录。
+测试程序处理人工内存数据、模拟回调和本地测试文件。
 
-    python -B scripts/audit_publication.py
+```text
+python -B scripts/check_sources.py
+python -B scripts/test_components.py --compiler <zig路径> --output outputs/tests
+```
 
-运行三项 Python 合成测试，再使用显式 Zig 工具链编译、运行队列、灰度跟踪和抽象音频路由三组主机测试：
+Qt Quick 桌面检查需要 PySide6，单独运行：
 
-    python -B scripts/build_pixel_research.py --compiler zig --build-dir ./outputs/offline
+```text
+python -B x2d/flash-ui/CodeTests/smoke.py
+python -B scripts/check_parameter_tile.py
+```
 
-仅构建当前保留组件，不调用已撤下的固件、文件封装或机内适配。输出位置必须明确。Zig 0.13.0 是旧组件使用的版本；本轮未重新编译 C/C++。
+可选的图像文件实验使用 numpy、Pillow、tifffile 或 rawpy；音频文件转换使用 numpy 和 soundfile。它们处理调用者提供的本地文件，不属于默认测试入口。
 
-独立 BSD 检测库及空白合成图调用：
-
-    python -B scripts/build_x1dii_detector.py --compiler zig --build-dir ./outputs/detector
-
-不构建设备发布器。可选 QML 预览需要自行安装 PySide6，见[界面说明](../../x2d/flash-ui/README.md)。离线入口不需要连接相机。
+历史修订目录保留原始组件接口，不能视作每个目录都能构建为完整程序。默认回归只覆盖 `scripts/component_tests.json` 中逐项列出的目标，其他源码是组件参考。
+本仓库不附带 Qt、系统 SDK 或相机运行环境。各自的许可证与安装方式由对应上游维护。

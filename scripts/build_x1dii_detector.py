@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Build only the licensed detector; no camera or incomplete publisher inputs."""
+"""Build the licensed detector and run a synthetic blank-image check."""
 from __future__ import annotations
 
 import argparse
