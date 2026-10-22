@@ -94,11 +94,11 @@ internal static class PatchDiagnosticReport {
         var text=Format(d,"首次失败：指纹不匹配",1);
         if (!text.Contains("指纹不匹配") || !text.Contains("USB timeout 121") || !text.Contains("相机退出码：未取得")) throw new Exception("首次失败或未知状态丢失");
         text=Protect(@"C:\Users\fixture-user\a.txt serial=fixture-id /ssd/122HASBL/B0000001.JPG printf '%s' 'YWJjZA=='");
-        if (text.Contains("fixture-user") || text.Contains("fixture-id") || text.Contains("B0000001") || text.Contains("YWJjZA")) throw new Exception("脱敏失败");
+        if (text.Contains("fixture-user") || text.Contains("fixture-id") || text.Contains("B0000001") || text.Contains("YWJjZA")) throw new Exception("隐私字段检查失败");
         if (Parse("PATCH_DIAGNOSTIC="+new string('A',262144),"PATCH_DIAGNOSTIC=") != null) throw new Exception("超长报告未拒绝");
         d["camera_log"] = new string('R',70000)+"\nRESTORE_FAILURE_TAIL serial=private-id";
         encoded="PATCH_DIAGNOSTIC="+Convert.ToBase64String(Encoding.UTF8.GetBytes(new JavaScriptSerializer().Serialize(d)));
         var longReport=Parse(encoded,"PATCH_DIAGNOSTIC=");
-        if (longReport == null || !Format(longReport,"",0).Contains("RESTORE_FAILURE_TAIL") || Format(longReport,"",0).Contains("private-id")) throw new Exception("长诊断丢失收尾原因或脱敏失败");
+        if (longReport == null || !Format(longReport,"",0).Contains("RESTORE_FAILURE_TAIL") || Format(longReport,"",0).Contains("private-id")) throw new Exception("长诊断丢失收尾原因或隐私字段检查失败");
     }
 }

@@ -13,7 +13,7 @@ from unicorn.arm64_const import *
 def local_hal_fingerprint(symbol,offset,size,expected):
  from firmware_image import system_elf
  import hashlib
- # 用户自行提供的本地合法原厂输入；不解密、不下载、不导出厂家文件。
+ # 使用用户提供的本地构建输入。
  binary=system_elf('/lib64/libduml_hal.so','77875f6f47a2137e5461c61789d44fdd8537e7359c8d7b43ec7ee4737fd15bb3')
  addresses={s['st_value'] for s in binary.symbols if s.name==symbol and s['st_value']}
  if len(addresses)!=1:raise ValueError('Local HAL symbol is missing or ambiguous')

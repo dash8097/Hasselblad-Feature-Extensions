@@ -38,7 +38,7 @@ static void diagnostic_archive(const char *job,int failed){
   unsigned limit=!strcmp(files[i],"probe.log")?2048:!strcmp(files[i],"merge.log")?1024:!strcmp(files[i],"task.result")?768:256;
   if(st.st_size>(long long)limit)(void)lseek(source,st.st_size-limit,SEEK_SET);
   ssize_t n=read(source,data,limit);close(source);if(n<0)continue;
-  /* 归档仅允许固定日志，禁止保存相册路径文件或 RAW 元数据。报告仍做二次脱敏。 */
+  /* 归档仅允许固定日志，禁止保存相册路径文件或 RAW 元数据。报告继续过滤个人字段。 */
   int count=snprintf(label,sizeof label,"\n[%s]%s\n",files[i],st.st_size>(long long)limit?" tail_only=1":"");
   if(total+(size_t)count+(size_t)n+1>6000)break;
   (void)write(fd,label,(size_t)count);total+=(size_t)count;any=1;

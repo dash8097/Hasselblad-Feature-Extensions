@@ -275,7 +275,7 @@ internal sealed class RawStackInstaller : Form {
             var title = new Label { Text = "操作诊断 · 请拍完整摘要", Font = new Font(Font.FontFamily,16,FontStyle.Bold), AutoSize = true, Location = new Point(22,16) }; diagnosticWindow.Controls.Add(title);
             var build = new Label { Text = InstallerVersion + " · X2D 固件 4.2.0 · 诊断 D1 · 包标识："+PackageFingerprint()+"\n只读诊断不重新安装；无法确认的状态明确标为未取得。", AutoSize = true, Location = new Point(22,54) }; diagnosticWindow.Controls.Add(build);
             var tabs = new TabControl { Location = new Point(22,112), Size = new Size(856,672), Anchor = AnchorStyles.Top|AnchorStyles.Bottom|AnchorStyles.Left|AnchorStyles.Right };
-            var summary = new TabPage("详细摘要"); var output = new TabPage("本次原始输出（已脱敏）");
+            var summary = new TabPage("详细摘要"); var output = new TabPage("本次诊断输出");
             diagnosticText = new TextBox { Multiline = true, ReadOnly = true, WordWrap = true, ScrollBars = ScrollBars.Vertical, Dock = DockStyle.Fill, Font = new Font(Font.FontFamily,10) };
             diagnosticRaw = new TextBox { Multiline = true, ReadOnly = true, WordWrap = true, ScrollBars = ScrollBars.Vertical, Dock = DockStyle.Fill, Font = new Font("Consolas",9) };
             summary.Controls.Add(diagnosticText); output.Controls.Add(diagnosticRaw); tabs.TabPages.Add(summary); tabs.TabPages.Add(output); diagnosticWindow.Controls.Add(tabs);
@@ -283,7 +283,7 @@ internal sealed class RawStackInstaller : Form {
             diagnosticAgain = new Button { Text = "重新读取现场（不安装）", Location = new Point(188,805), Size = new Size(220,34), Anchor = AnchorStyles.Bottom|AnchorStyles.Left, Enabled = !running }; diagnosticAgain.Click += async delegate { await Run(new string[] { "Diagnose" }); }; diagnosticWindow.Controls.Add(diagnosticAgain);
             var copy = new Button { Text = "复制完整结果", Location = new Point(426,805), Size = new Size(150,34), Anchor = AnchorStyles.Bottom|AnchorStyles.Left };
             copy.Click += delegate {
-                try { Clipboard.SetText(diagnosticText.Text+Environment.NewLine+"本次原始输出（已脱敏）"+Environment.NewLine+diagnosticRaw.Text); }
+                try { Clipboard.SetText(diagnosticText.Text+Environment.NewLine+"本次诊断输出"+Environment.NewLine+diagnosticRaw.Text); }
                 catch(Exception ex) { MessageBox.Show(diagnosticWindow,"复制未完成，可选中文字手动复制。"+Environment.NewLine+ex.Message,"诊断结果",MessageBoxButtons.OK,MessageBoxIcon.Information); }
             }; diagnosticWindow.Controls.Add(copy);
             var note = new Label { Text = "首次失败保留；日志不自动上传。", AutoSize = true, Location = new Point(598,813), Anchor = AnchorStyles.Bottom|AnchorStyles.Left }; diagnosticWindow.Controls.Add(note);

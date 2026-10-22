@@ -2,14 +2,14 @@
   "purpose": "当前构建仍实际读取的十份冻结源码/配置，未附带旧包",
   "files": {
     "client/mac_usb.py": "67f83b91bb5ea71a687ffcd21ac85790adad3d93facd1bd45aef1a731b0b19d2",
-    "client/mac_diagnostics.py": "232323826936a402dfe1edb386b33ba5590e9239dc485f1f751fe0bc8980b8a3",
+    "client/mac_diagnostics.py": "be3a15da4590703268f0e0295c4bd7d2e3f445d80e98eccd253055bd2d7245cf",
     "client/package_feature_selection.py": "969502a4fc933168328f7b0434a05698f8d2ee2ed09715bf18a1f71ccaa0daac",
-    "client/mac_patch.py": "254d1454fa65ed707e4370a06ae64dee2d0e42d65eff9166f8b466f617ce1957",
+    "client/mac_patch.py": "03c644650450121dfd03ccdc797f3597c9a573eef3c91dd6ce545c16fb7f6c1b",
     "client/mac_gui.py": "47b9748f33d89fc8df6fe8088f42dfd3c55be1fc21962de96d8b0cf713dc97d0",
     "client/diagnostic-commands.json": "6f33a6f01e710b61d46e9d247bd2ae63d6f7d2c58da44d70cf9b9151d3ebff68",
     "client/feature-catalog.json": "f345961fb9611dce55397e18434340ac6c3ae76902894e2c74a0035830c601fb",
-    "windows_ui/RawStackInstaller.cs": "73efad7f96d0ecf1be4ba266cd2b622c0cb8468688589eccff3d7610c6d275ed",
-    "windows_ui/PatchDiagnosticReport.cs": "bf7a372a92582fb356923180b1095e141b1d8c42c1a738f40161c757069c21c9",
+    "windows_ui/RawStackInstaller.cs": "cf9de199bf41a0fda49be40c840f4d19354fad7290a4b4d30ebb9db7a43820cf",
+    "windows_ui/PatchDiagnosticReport.cs": "bd673fcfce6ad9bb0ef8d4478d2800932b435bc8b66aa776d8622261c578859e",
     "windows_ui/PatchUpdateState.cs": "d95c5c81eea45b226b130e8dafef5647201978fa4e4da1909ef8231c6f1d7135"
   },
   "unchanged_template_bytes": true

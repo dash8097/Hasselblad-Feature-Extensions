@@ -46,7 +46,7 @@ static void rsha_final(ReceiptSha *s,unsigned char out[32]){
 }
 #endif
 
-/* 公开实现仅含兼容性摘要，不保存厂家指令。SHA-256 不是解密。 */
+/* 兼容性检查采用 SHA-256 摘要。 */
 static inline int public_code_digest(const void *address,unsigned size,const char *expected){
  if(!address||!expected)return 0;
  unsigned char actual[32];ReceiptSha s;rsha_init(&s);rsha_update(&s,address,size);rsha_final(&s,actual);

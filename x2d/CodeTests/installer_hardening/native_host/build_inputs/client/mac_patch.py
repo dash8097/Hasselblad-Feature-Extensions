@@ -552,4 +552,4 @@ class Installer:
                     raise PatchError(message) from exc
 
     def diagnostic_text(self):
-        return 'X2D R5.8.52 · 固件 4.2.0\n'+mac_diagnostics.format_context(self.context,self.first_failure)+'\n\n本次原始输出（已脱敏）\n'+'\n\n'.join(self.log)
+        return 'X2D R5.8.52 · 固件 4.2.0\n'+mac_diagnostics.format_context(self.context,self.first_failure)+'\n\n本次诊断输出\n'+'\n\n'.join(self.log)

@@ -1,7 +1,7 @@
 """完整诊断字段；命令清单由冻结 Windows PatchDiagnostics.ps1 离线导出。
 
 错误服务只保存门控及编号，worker 只保存门控、阶段和错误，任务控制日志
-逐段解码与脱敏。既不打开照片，也不把 UID/METADATA 等私有信息写入报告。
+逐段处理诊断字段。既不打开照片，也不把 UID/METADATA 等私有信息写入报告。
 """
 import base64
 import json

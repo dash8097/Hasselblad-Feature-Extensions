@@ -1,4 +1,4 @@
-"""仅取调度器已脱敏的固定失败归档及活动状态，不读取成片。"""
+"""仅取调度器过滤后的固定失败归档及活动状态，不读取成片。"""
 from pathlib import Path
 import argparse,base64,json,re,sys,time
 from package_ui import ROOT,OUT,PACKAGE,PACKAGE_ID,transport_lock,read_status
