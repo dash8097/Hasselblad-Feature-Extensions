@@ -1,0 +1,33 @@
+{
+  "model": "X2D 100C first generation",
+  "firmware": "4.2.0",
+  "lens": "55V",
+  "multiplier": 3.0,
+  "stillMultipliers": {
+    "0": 3.0,
+    "1": 3.0,
+    "2": 2.0
+  },
+  "preBoostCeiling": 21844,
+  "maximumVerifiedBoost": 1.5,
+  "libaaaSha256": "feef8a8dc3a27395e47232c2b25a5da7a7ab335922fbb527e637c439e35bcec7",
+  "entry": 705408,
+  "end": 706476,
+  "functionSha256": "c8b5407c615b60c05078bc7ba9ada8cf53c905bac17faa59561f948feac0d430",
+  "candidateSha256": "4eb555dc16ad54bdcfecd244b63bfea7ee691ce67b8274a1244644392ba15e13",
+  "ranges": [
+    {
+      "va": 706244,
+      "length": 4,
+      "original_sha256": "ece35b983ca94af0eb418cc6c205d360bc1bd41f6d66ef59e5aeb912c5b4162f",
+      "candidate_sha256": "439c4ca1d47eca4d9c8c7644ec664921f7c62b8af20dc920380930240f861e33"
+    },
+    {
+      "va": 706340,
+      "length": 84,
+      "original_sha256": "1ea67051ab7b8c0f26e77dd67925dee8462ba50d5074fab6a30b24f8d229d51d",
+      "candidate_sha256": "51003305c3f3e95cf33bb7cf1ce446df10637d8e0e93e446689357c9d92b8a65"
+    }
+  ],
+  "private_inputs": "X2D_PRIVATE_AF_PATCH_SPEC"
+}

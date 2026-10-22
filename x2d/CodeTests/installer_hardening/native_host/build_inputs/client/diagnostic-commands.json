@@ -1,0 +1,284 @@
+﻿[
+    {
+        "name":  "directory/data",
+        "command":  "d=/data; if test -L \"$d\"; then echo LINK; elif test -d \"$d\"; then echo DIRECTORY; elif test -e \"$d\"; then echo OTHER; else echo ABSENT; fi",
+        "path":  "/data"
+    },
+    {
+        "name":  "directory/data/local",
+        "command":  "d=/data/local; if test -L \"$d\"; then echo LINK; elif test -d \"$d\"; then echo DIRECTORY; elif test -e \"$d\"; then echo OTHER; else echo ABSENT; fi",
+        "path":  "/data/local"
+    },
+    {
+        "name":  "directory/data/local/tmp",
+        "command":  "d=/data/local/tmp; if test -L \"$d\"; then echo LINK; elif test -d \"$d\"; then echo DIRECTORY; elif test -e \"$d\"; then echo OTHER; else echo ABSENT; fi",
+        "path":  "/data/local/tmp"
+    },
+    {
+        "name":  "directory/data/local/tmp/x2d-rs1",
+        "command":  "d=/data/local/tmp/x2d-rs1; if test -L \"$d\"; then echo LINK; elif test -d \"$d\"; then echo DIRECTORY; elif test -e \"$d\"; then echo OTHER; else echo ABSENT; fi",
+        "path":  "/data/local/tmp/x2d-rs1"
+    },
+    {
+        "name":  "directory/data/local/tmp/x2d-rs8",
+        "command":  "d=/data/local/tmp/x2d-rs8; if test -L \"$d\"; then echo LINK; elif test -d \"$d\"; then echo DIRECTORY; elif test -e \"$d\"; then echo OTHER; else echo ABSENT; fi",
+        "path":  "/data/local/tmp/x2d-rs8"
+    },
+    {
+        "name":  "stock/result",
+        "command":  "d=/data/local/tmp/x2d-rs1; f=$d/result; if test ! -L $d \u0026\u0026 test -d $d \u0026\u0026 test ! -L $f \u0026\u0026 test -f $f; then tail -n 20 $f | head -c 4096; else echo ABSENT; fi",
+        "path":  "/data/local/tmp/x2d-rs1/result"
+    },
+    {
+        "name":  "stock/done",
+        "command":  "d=/data/local/tmp/x2d-rs1; f=$d/done; if test ! -L $d \u0026\u0026 test -d $d \u0026\u0026 test ! -L $f \u0026\u0026 test -f $f; then tail -n 20 $f | head -c 4096; else echo ABSENT; fi",
+        "path":  "/data/local/tmp/x2d-rs1/done"
+    },
+    {
+        "name":  "stock/install.log",
+        "command":  "d=/data/local/tmp/x2d-rs1; f=$d/install.log; if test ! -L $d \u0026\u0026 test -d $d \u0026\u0026 test ! -L $f \u0026\u0026 test -f $f; then tail -n 20 $f | head -c 4096; else echo ABSENT; fi",
+        "path":  "/data/local/tmp/x2d-rs1/install.log"
+    },
+    {
+        "name":  "upgrade/result",
+        "command":  "d=/data/local/tmp/x2d-rs8; f=$d/result; if test ! -L $d \u0026\u0026 test -d $d \u0026\u0026 test ! -L $f \u0026\u0026 test -f $f; then tail -n 20 $f | head -c 4096; else echo ABSENT; fi",
+        "path":  "/data/local/tmp/x2d-rs8/result"
+    },
+    {
+        "name":  "upgrade/done",
+        "command":  "d=/data/local/tmp/x2d-rs8; f=$d/done; if test ! -L $d \u0026\u0026 test -d $d \u0026\u0026 test ! -L $f \u0026\u0026 test -f $f; then tail -n 20 $f | head -c 4096; else echo ABSENT; fi",
+        "path":  "/data/local/tmp/x2d-rs8/done"
+    },
+    {
+        "name":  "upgrade/install.log",
+        "command":  "d=/data/local/tmp/x2d-rs8; f=$d/install.log; if test ! -L $d \u0026\u0026 test -d $d \u0026\u0026 test ! -L $f \u0026\u0026 test -f $f; then tail -n 20 $f | head -c 4096; else echo ABSENT; fi",
+        "path":  "/data/local/tmp/x2d-rs8/install.log"
+    },
+    {
+        "name":  "menu",
+        "command":  "d=/tmp; f=/tmp/x2d-native-menu-preload.status; if test ! -L $d \u0026\u0026 test ! -L $f \u0026\u0026 test -f $f; then head -c 4096 $f; else echo ABSENT; fi",
+        "path":  "/tmp/x2d-native-menu-preload.status"
+    },
+    {
+        "name":  "worker",
+        "command":  "f=/tmp/x2d-pixel-overclock/status.json; if test ! -L /tmp/x2d-pixel-overclock \u0026\u0026 test ! -L $f \u0026\u0026 test -f $f; then head -c 4096 $f | /system/xbin/busybox base64; else echo ABSENT; fi",
+        "path":  "/tmp/x2d-pixel-overclock/status.json"
+    },
+    {
+        "name":  "ui",
+        "command":  "d=/tmp/x2d-pixel-overclock; f=/tmp/x2d-pixel-overclock/ui.txt; if test ! -L $d \u0026\u0026 test ! -L $f \u0026\u0026 test -f $f; then head -c 4096 $f; else echo ABSENT; fi",
+        "path":  "/tmp/x2d-pixel-overclock/ui.txt"
+    },
+    {
+        "name":  "mount",
+        "command":  "awk \u0027$2==\"/system\"{print $4}\u0027 /proc/mounts",
+        "path":  "/proc/mounts"
+    },
+    {
+        "name":  "lock",
+        "command":  "if test -e /tmp/x2d-multishot-active; then echo PRESENT; else echo ABSENT; fi",
+        "path":  "/tmp/x2d-multishot-active"
+    },
+    {
+        "name":  "native_error",
+        "command":  "/bin/dbus-send --system --print-reply --dest=com.hasselblad.error /error org.freedesktop.DBus.Properties.GetAll string:com.hasselblad.error | head -c 8192 | /system/xbin/busybox base64",
+        "path":  "/error"
+    },
+    {
+        "name":  "exposure",
+        "command":  "/bin/dbus-send --system --print-reply --dest=com.hasselblad.camera /camera org.freedesktop.DBus.Properties.Get string:com.hasselblad.camera string:exposure_status 2\u003e\u00261|/system/xbin/busybox base64;true",
+        "path":  "/camera"
+    },
+    {
+        "name":  "storage",
+        "command":  "/bin/dbus-send --system --print-reply --dest=com.hasselblad.storage /storage org.freedesktop.DBus.Properties.Get string:com.hasselblad.storage string:storage_status 2\u003e\u00261|/system/xbin/busybox base64;true",
+        "path":  "/storage"
+    },
+    {
+        "name":  "job_root/mnt/media_rw/ssd",
+        "command":  "d=/mnt/media_rw/ssd; if test -L \"$d\"; then echo LINK; elif test -d \"$d\"; then echo DIRECTORY; test -w \"$d\" \u0026\u0026 echo WRITABLE || echo NOT_WRITABLE; elif test -e \"$d\"; then echo OTHER; else echo ABSENT; fi",
+        "path":  "任务存储目录状态"
+    },
+    {
+        "name":  "job_root/mnt/media_rw/ssd/multishot",
+        "command":  "d=/mnt/media_rw/ssd/multishot; if test -L \"$d\"; then echo LINK; elif test -d \"$d\"; then echo DIRECTORY; test -w \"$d\" \u0026\u0026 echo WRITABLE || echo NOT_WRITABLE; elif test -e \"$d\"; then echo OTHER; else echo ABSENT; fi",
+        "path":  "任务存储目录状态"
+    },
+    {
+        "name":  "job_mount",
+        "command":  "awk \u0027$2==\"/mnt/media_rw/ssd\"{print $3,$4;n++} END{if(!n)print \"ABSENT\"}\u0027 /proc/mounts",
+        "path":  "SSD 挂载类型与选项"
+    },
+    {
+        "name":  "task/task.info",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/task.info; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 2048 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/task.info",
+        "task_id":  "ABSENT",
+        "tail_limit":  2048
+    },
+    {
+        "name":  "task/task.result",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/task.result; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 2048 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/task.result",
+        "task_id":  "ABSENT",
+        "tail_limit":  2048
+    },
+    {
+        "name":  "task/cleanup.result",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/cleanup.result; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 2048 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/cleanup.result",
+        "task_id":  "ABSENT",
+        "tail_limit":  2048
+    },
+    {
+        "name":  "task/failure.result",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/failure.result; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 2048 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/failure.result",
+        "task_id":  "ABSENT",
+        "tail_limit":  2048
+    },
+    {
+        "name":  "task/task.events",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/task.events; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 4096 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/task.events",
+        "task_id":  "ABSENT",
+        "tail_limit":  4096
+    },
+    {
+        "name":  "task/task.memory",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/task.memory; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 2048 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/task.memory",
+        "task_id":  "ABSENT",
+        "tail_limit":  2048
+    },
+    {
+        "name":  "task/phase-events",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/phase-events; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 4096 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/phase-events",
+        "task_id":  "ABSENT",
+        "tail_limit":  4096
+    },
+    {
+        "name":  "task/phase-metrics",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/phase-metrics; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 2048 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/phase-metrics",
+        "task_id":  "ABSENT",
+        "tail_limit":  2048
+    },
+    {
+        "name":  "task/run.log",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/run.log; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 4096 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/run.log",
+        "task_id":  "ABSENT",
+        "tail_limit":  4096
+    },
+    {
+        "name":  "task/capture.log",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/capture.log; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 4096 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/capture.log",
+        "task_id":  "ABSENT",
+        "tail_limit":  4096
+    },
+    {
+        "name":  "task/merge.log",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/merge.log; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 4096 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/merge.log",
+        "task_id":  "ABSENT",
+        "tail_limit":  4096
+    },
+    {
+        "name":  "task/render.log",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/render.log; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 4096 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/render.log",
+        "task_id":  "ABSENT",
+        "tail_limit":  4096
+    },
+    {
+        "name":  "task/probe.log",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/probe.log; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 4096 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/probe.log",
+        "task_id":  "ABSENT",
+        "tail_limit":  4096
+    },
+    {
+        "name":  "task/stage",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/stage; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 128 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/stage",
+        "task_id":  "ABSENT",
+        "tail_limit":  128
+    },
+    {
+        "name":  "task/run.rc",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/run.rc; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 128 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/run.rc",
+        "task_id":  "ABSENT",
+        "tail_limit":  128
+    },
+    {
+        "name":  "task/capture.rc",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/capture.rc; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 128 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/capture.rc",
+        "task_id":  "ABSENT",
+        "tail_limit":  128
+    },
+    {
+        "name":  "task/restored",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/restored; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 128 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/restored",
+        "task_id":  "ABSENT",
+        "tail_limit":  128
+    },
+    {
+        "name":  "task/memory.failed",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/memory.failed; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 128 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/memory.failed",
+        "task_id":  "ABSENT",
+        "tail_limit":  128
+    },
+    {
+        "name":  "task/finish-restore.log",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/finish-restore.log; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 4096 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/finish-restore.log",
+        "task_id":  "ABSENT",
+        "tail_limit":  4096
+    },
+    {
+        "name":  "task/watchdog.log",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/watchdog.log; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 4096 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/watchdog.log",
+        "task_id":  "ABSENT",
+        "tail_limit":  4096
+    },
+    {
+        "name":  "task/finish-metrics",
+        "command":  "j=/mnt/media_rw/ssd/multishot/ABSENT; f=$j/finish-metrics; test -d \"$j\" \u0026\u0026 test ! -L \"$j\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 tail -c 2048 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "固定任务控制日志/finish-metrics",
+        "task_id":  "ABSENT",
+        "tail_limit":  2048
+    },
+    {
+        "name":  "current_memory",
+        "command":  "head -n 5 /proc/meminfo;pidof camera-service camera-storage",
+        "path":  "当前系统内存和服务 PID"
+    },
+    {
+        "name":  "archive/last-task.txt",
+        "command":  "d=/tmp/x2d-pixel-overclock; f=$d/last-task.txt; test ! -L \"$d\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 head -c 6000 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "有界任务摘要/last-task.txt"
+    },
+    {
+        "name":  "archive/last-failed-task.txt",
+        "command":  "d=/tmp/x2d-pixel-overclock; f=$d/last-failed-task.txt; test ! -L \"$d\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 head -c 6000 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "有界任务摘要/last-failed-task.txt"
+    },
+    {
+        "name":  "archive/last-cleanup.result",
+        "command":  "d=/tmp/x2d-pixel-overclock; f=$d/last-cleanup.result; test ! -L \"$d\" \u0026\u0026 test ! -L \"$f\" \u0026\u0026 test -f \"$f\" \u0026\u0026 head -c 6000 \"$f\"|/system/xbin/busybox base64; true",
+        "path":  "有界任务摘要/last-cleanup.result"
+    },
+    {
+        "name":  "service_failures",
+        "command":  "logcat -d -v threadtime 2\u003e/dev/null|grep -iE \"ion_alloc.*failed|VmemAlloc.*failed|Assertion Failed|pre allocated|called exit\"|tail -c 4096|/system/xbin/busybox base64; true",
+        "path":  "历史服务异常摘录，不自动归属任务"
+    }
+]

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "features": [
+    {
+      "id": "pixel400",
+      "bit": 1,
+      "label": "四亿／十六亿像素",
+      "default": true,
+      "enabled": true,
+      "includes": [
+        "playback"
+      ]
+    },
+    {
+      "id": "quarter",
+      "bit": 2,
+      "label": "25MP",
+      "default": true,
+      "enabled": true
+    },
+    {
+      "id": "raw_stack",
+      "bit": 4,
+      "label": "RAW 堆栈",
+      "default": true,
+      "enabled": true
+    },
+    {
+      "id": "face_afc",
+      "bit": 8,
+      "label": "人眼",
+      "default": true,
+      "enabled": true
+    },
+    {
+      "id": "af_speed",
+      "bit": 16,
+      "label": "对焦增强",
+      "default": true,
+      "enabled": true
+    },
+    {
+      "id": "display",
+      "bit": 64,
+      "label": "屏幕调参与显示扩展",
+      "default": true,
+      "enabled": true
+    },
+    {
+      "id": "shutter",
+      "bit": 128,
+      "label": "快门动画与声音（默认关闭）",
+      "default": true,
+      "enabled": true
+    }
+  ],
+  "default": 255,
+  "allowed_feature_masks": [
+    255
+  ]
+}

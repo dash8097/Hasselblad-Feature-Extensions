@@ -1,0 +1,10 @@
+{
+  "commit": "eabe73d22845ea87f78d78ae763bb0675b7756b5",
+  "author": "GUOSUYZY",
+  "local_file": "six_row_kernel.h",
+  "sha256": "1d455ce345766b84cb2d52bfead07a5dcddb812af91be50369fe2b898a54ecd0",
+  "byte_identical_core": true,
+  "description": "采用已上传的六帧逐行 GRBG 计算核心，当前共享文件与远端逐字节一致；磁盘输入保持原厂数值域和真实白电平。未引入对方内存接管、旧安装脚本或额外的 3FR 相位平移后处理。",
+  "source_kind": "team_source_snapshot",
+  "source_location": "私有仓库定位已移除；作者、原提交号和算法摘要保留"
+}

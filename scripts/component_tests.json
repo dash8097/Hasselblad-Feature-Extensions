@@ -1,0 +1,114 @@
+[
+  {
+    "name": "factory_light_sharpen",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_factory_light_sharpen.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "factory_preview_scale",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_factory_preview_scale.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "factory_raw_stream",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_factory_raw_stream.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "factory_raw_tile",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_factory_raw_tile.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "four_hundred_policy",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_four_hundred_policy.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "heif_grid",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_heif_grid.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "pixel_chunk_fanout",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_pixel_chunk_fanout.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "pixel_mode_events",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_pixel_mode_events.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "pixel_render_route",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_pixel_render_route.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "pixel_shutter_policy",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_pixel_shutter_policy.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  },
+  {
+    "name": "capture_memory_merge",
+    "kind": "cc",
+    "sources": [
+      "x2d/CodeTests/pixel_shift_rgb/check_capture_memory_merge.c",
+      "x2d/CodeTests/pixel_shift_rgb/capture_memory_merge.c",
+      "x2d/CodeTests/pixel_shift_rgb/capture_merge_workers.c"
+    ],
+    "output_args": [
+      "synthetic-merge.bin"
+    ]
+  }
+]

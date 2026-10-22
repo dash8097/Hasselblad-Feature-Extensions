@@ -1,0 +1,60 @@
+#include "face_model.hpp"
+#include <QCoreApplication>
+#include <QFile>
+#include <QFileInfo>
+#include <QDir>
+#include <QJSEngine>
+#include <cstdio>
+#include <cstdlib>
+#include <vector>
+using namespace x2dui;
+static int checks;
+static void check(bool yes,const char*s){++checks;if(!yes){std::fprintf(stderr,"FACE_MODEL_FAIL %s check=%d\n",s,checks);std::exit(1);}}
+static std::vector<FaceAction> take(FaceActions&a){std::vector<FaceAction> out;FaceAction v;while(a.take(v))out.push_back(v);return out;}
+static QString body(const QString&s,const QString&marker){int p=s.indexOf(marker);check(p>=0,"oracle function");p=s.indexOf('{',p);int start=p+1,depth=1;while(++p<s.size()&&depth){if(s[p]=='{')++depth;else if(s[p]=='}')--depth;}return s.mid(start,p-start-1);}
+static ProtocolObject obj(const char*s){ProtocolObject o;check(parse_protocol(s,o),"JSON fixture");return o;}
+int main(int argc,char**argv){QCoreApplication app(argc,argv);check(argc==2,"source argument");QFile file(QString::fromLocal8Bit(argv[1]));check(file.open(QIODevice::ReadOnly),"source read");auto source=QString::fromUtf8(file.readAll());QJSEngine js;
+ auto eval=[&](const QString&s){auto v=js.evaluate(s);check(!v.isError(),"oracle evaluation");return v;};
+ for(auto name:{"fail()","waitFor(next)","writeOptions()","writeFace()","choose(mode, allowed)","advance()"})eval("function "+QString(name)+"{"+body(source,"function "+QString(name))+"}");
+ for(int master=0;master<2;++master)for(unsigned bits:{0u,128u,256u,384u})for(int initial:{0,2})for(int wanted=0;wanted<3;++wanted){
+  FaceModeModel m({0,2,256});FaceModeSnapshot snapshot{true,bool(master),bits,initial};FaceActions actions;m.observe(snapshot);
+  eval(QString("var phase='',wanted=0,remaining=0,desiredOptions=0,ownsMaster=false,originalOtherOptions=0,errorText='',multi=2,off=0,eyeBit=256,appliedCount=0;var system={debug_mode:%1,debug_options:%2};var camera={face_detection:%3};function applied(){appliedCount++};Object.defineProperty(this,'busy',{configurable:true,get:function(){return phase!==''}});Object.defineProperty(this,'currentMode',{configurable:true,get:function(){return camera.face_detection===off?2:(system.debug_mode&&(system.debug_options&eyeBit)?1:0)}});").arg(master?"true":"false").arg(bits).arg(initial));
+  check(m.choose(wanted,true,actions)==eval(QString("choose(%1,true)").arg(wanted)).toBool(),"choose differential");
+  for(int step=0;step<7;++step){for(auto a:take(actions)){if(a.kind==FaceActionKind::DebugMaster)snapshot.debugMaster=a.value!=0;else if(a.kind==FaceActionKind::DebugOptions)snapshot.debugOptions=uint32_t(a.value);else if(a.kind==FaceActionKind::FaceDetection)snapshot.faceDetection=int(a.value);else check(false,"unexpected mode action");}
+   check(snapshot.debugMaster==eval("system.debug_mode").toBool()&&snapshot.debugOptions==uint32_t(eval("system.debug_options").toUInt())&&snapshot.faceDetection==eval("camera.face_detection").toInt(),"proxy writes differential");m.observe(snapshot);m.advance(actions);eval("advance()");
+   check(m.busy()==eval("busy").toBool()&&m.owns_master()==eval("ownsMaster").toBool(),"phase ownership differential");
+  }
+  check(m.current_mode()==wanted&&!m.error()&&m.take_applied(),"all modes finish");
+ }
+ FaceActions actions;FaceModeModel timeout({0,2,256});timeout.observe({true,false,128,2});check(timeout.choose(1,true,actions),"master request");take(actions);for(int n=0;n<31;++n)timeout.advance(actions);check(!timeout.busy()&&timeout.error()&&take(actions).empty(),"unknown property write no replay");
+ FaceModeModel invalid({0,2,3});invalid.observe({true,false,0,2});check(!invalid.choose(1,true,actions),"invalid eye mask reject");
+ FacePopupModel popup;FaceModeModel mode({0,2,256});mode.observe({true,false,0,2});popup.observe(false,true,false,0,true,true);check(popup.index()==-1&&!popup.selectable(0),"popup no false initial highlight");popup.observe(true,true,false,0,true,false);check(!popup.press(2,mode,actions)&&popup.press(1,mode,actions),"popup native permissions");take(actions);check(popup.key(FacePopupKey::Abort,mode,actions)&&popup.closed(),"popup abort");take(actions);
+ FacePopupModel nav;nav.observe(true,true,false,0,true,true);check(nav.key(FacePopupKey::Next,mode,actions)&&nav.index()==1,"popup navigation");nav.observe(true,true,false,0,true,true);check(nav.index()==1,"stable snapshot retains keyboard selection");nav.observe(true,true,false,2,true,true);check(nav.index()==2,"mode notification updates highlight");
+ FaceSnapshot s;s.present=s.faceMode=s.idle=s.screenBack=s.canMoveTp=s.canShowAF=true;s.width=800;s.height=600;s.focusRegion={.45,.45,.1,.1,true};s.focusX=.5;s.focusY=.5;s.count=2;s.candidates[0]={9,{1000,2000,2000,4000,true}};s.candidates[1]={3,{6500,2000,2000,4000,true}};
+ FacePointModel points;check(points.update(s,0,actions),"face snapshot");auto list=take(actions);check(list.size()==1&&list[0].kind==FaceActionKind::FaceTarget&&list[0].value==3,"nearest candidate only target setter");
+ check(points.move(160,240,true,actions),"drag over candidate");list=take(actions);check(list.size()==1&&list[0].kind==FaceActionKind::FaceTarget&&list[0].value==9,"drag commits no ordinary focus while faces present");
+ points.tick(200,actions);check(points.state().targetUnconfirmed&&take(actions).empty(),"unknown target not repeated");
+ check(points.lock_at(160,240,actions)&&points.state().personLocked&&points.state().selectedId==9,"explicit lock");take(actions);s.focusX=.2;s.focusY=.4;s.detectedId=9;s.detectedValid=true;s.detectedRegion={.1,.2,.2,.4,true};s.roi=FaceRoi::Face;check(points.update(s,250,actions)&&points.actual_face_valid()&&points.selector_only(),"actual selected face gate");take(actions);
+ check(points.move(700,240,true,actions)&&points.state().selectedId==9&&take(actions).empty(),"locked person preserved while dragging");
+ points.tick(1000,actions);list=take(actions);check(list.size()==1&&list[0].kind==FaceActionKind::ReadBackend,"fixed backend probe");points.backend_reply(list[0].id,obj("{\"protocol\":1,\"ready\":true,\"pid\":17,\"eyeProtocol\":1}"),actions);list=take(actions);check(points.state().backendReady&&points.state().eyeBackendReady&&list.size()==1&&list[0].value==0x40000009,"extended command only after validated backend");
+ s.count=0;s.detectedValid=false;s.detectedId=-1;check(points.update(s,1100,actions),"target disappears");take(actions);points.tick(2099,actions);check(take(actions).empty(),"no-face grace");points.tick(2100,actions);list=take(actions);check(points.state().ordinaryFallback&&!points.state().faceAfActive&&list.size()==2&&list[1].kind==FaceActionKind::FocusPoint,"fallback ordinary position only");
+ check(points.state().personLocked&&points.state().selectedId==9&&!points.state().lockedRegion.present,"no fabricated missing face rectangle");
+ s.count=65;check(!points.update(s,2200,actions),"oversize candidate list reject");s.count=2;s.candidates[1].id=9;check(!points.update(s,2200,actions),"duplicate ID reject");
+ points.detach(actions);list=take(actions);check(list.size()==1&&list[0].value==0x40010000,"detach releases own backend lock");points.detach(actions);check(take(actions).empty(),"detach idempotent");
+ EyeModel eye;EyeInput in;in.eyeMode=in.faceValid=true;in.faceId=9;in.width=800;in.height=600;in.left={.2,.3,.02,.02,true};in.right={.3,.3,.02,.02,true};eye.update(in,0);check(eye.state().active==0&&eye.visible_eye(),"automatic left preference");
+ in.personLocked=true;in.lockedFaceId=9;eye.update(in,10);eye.select_at(9,248,186,10);check(eye.state().preferred==1&&eye.state().active==1,"tap nearest right eye");in.right.present=false;eye.update(in,20);check(eye.state().active==-1&&!eye.visible_eye()&&eye.state().deadline==520,"lost chosen eye immediate hide with deadline");eye.tick(519);check(eye.state().active==-1,"loss delay holds");eye.tick(520);check(eye.state().active==0&&eye.visible_eye(),"loss delay fallback other eye");
+ in.right.present=true;eye.update(in,600);check(eye.state().active==0,"preferred return delay");eye.tick(1100);check(eye.state().active==1,"preferred recovered");in.selectionActive=false;eye.update(in,1200);check(eye.state().active==-1&&eye.state().afEye==-1&&!eye.visible_eye()&&!eye.state().deadline,"inactive clears eye AF display");
+ EyeAfModel af;af.update(true,17,2,0,actions);list=take(actions);check(list.size()==1&&list[0].value==0x40020002,"eye setter once");for(uint64_t t:{500,1000,1500}){af.tick(t,actions);list=take(actions);check(list.size()==1&&list[0].kind==FaceActionKind::ReadEyeState,"eye confirmation readonly");af.accept(list[0].id,obj("{\"protocol\":1,\"pid\":17,\"requested\":2,\"actual\":1,\"result\":0}"));}af.tick(2000,actions);check(af.error()&&!af.confirmed()&&take(actions).empty(),"queued eye unknown never replayed");af.update(true,17,3,2100,actions);take(actions);af.tick(2600,actions);list=take(actions);af.accept(list[0].id,obj("{\"protocol\":1,\"pid\":99,\"requested\":3,\"actual\":3,\"result\":0}"));check(!af.confirmed(),"wrong backend pid refused");af.accept(list[0].id,obj("{\"protocol\":1,\"pid\":17,\"requested\":3,\"actual\":3,\"result\":0}"));check(af.confirmed(),"eye receipt confirmed");af.detach(actions);list=take(actions);check(list.size()==1&&list[0].value==0x40020004,"eye restore intent on detach");
+ EyeAfModel fresh;fresh.update(true,17,2,100,actions,2);list=take(actions);check(list.size()==1&&list[0].value==0x40020002,"v2 setter one");fresh.tick(600,actions);list=take(actions);check(list.size()==1&&list[0].value==0x40020005,"v2 readonly sample request");fresh.tick(601,actions);list=take(actions);check(list.size()==1&&list[0].kind==FaceActionKind::ReadEyeState,"v2 read after sample");
+ fresh.accept(list[0].id,obj(R"({"protocol":2,"pid":17,"command":2,"requested":2,"actual":2,"result":0,"command_ms":99,"sampled_ms":600})"),601);check(!fresh.confirmed(),"old command rejected");
+ fresh.accept(list[0].id,obj(R"({"protocol":2,"pid":17,"command":2,"requested":2,"actual":2,"result":0,"command_ms":100,"sampled_ms":599})"),601);check(!fresh.confirmed(),"old sample rejected");
+ fresh.accept(list[0].id,obj(R"({"protocol":2,"pid":17,"command":2,"requested":2,"actual":2,"result":0,"command_ms":100,"sampled_ms":602})"),601);check(!fresh.confirmed(),"future sample rejected");
+ fresh.accept(list[0].id,obj(R"({"protocol":2,"pid":17,"command":3,"requested":2,"actual":2,"result":0,"command_ms":100,"sampled_ms":600})"),601);check(!fresh.confirmed(),"wrong request rejected");
+ fresh.accept(list[0].id,obj(R"({"protocol":2,"pid":17,"command":2,"requested":2,"actual":2,"result":0,"command_ms":100,"sampled_ms":600})"),601);check(fresh.confirmed(),"fresh consumed result confirmed");fresh.tick(5000,actions);check(take(actions).empty(),"confirmed no repeat");
+ QFile nearestFile(QFileInfo(file).dir().filePath("p16-NearestFacePolicy.js"));check(nearestFile.open(QIODevice::ReadOnly),"nearest original source");auto nearestSource=QString::fromUtf8(nearestFile.readAll());nearestSource.remove(".pragma library");eval(nearestSource);
+ for(int n=0;n<1024;n++){FaceSnapshot sample;sample.present=sample.faceMode=sample.idle=true;sample.width=800;sample.height=600;sample.focusX=double((n*137)%10001)/10000;sample.focusY=double((n*251)%10001)/10000;sample.count=4;QStringList faces;
+  for(int j=0;j<4;j++){int id=(j*17+n*3)%1000;double x=(n*97+j*1949)%9000,y=(n*83+j*2129)%9000,w=500+(n+j*13)%1000,h=500+(n+j*11)%1000;sample.candidates[j]={id,{x,y,w,h,true}};faces<<QString("{id:%1,x:%2,y:%3,width:%4,height:%5}").arg(id).arg(x).arg(y).arg(w).arg(h);}
+  FacePointModel point;FaceActions out;check(point.update(sample,0,out),"nearest fixture snapshot");int expected=eval(QString("nearest([%1],%2,%3)").arg(faces.join(',')).arg(sample.focusX*10000,0,'g',17).arg(sample.focusY*10000,0,'g',17)).toInt();check(point.state().selectedId==expected,"original nearest policy differential");
+ }
+ std::printf("FACE_MODEL_PASS assertions=%d mode_oracle_scenarios=48 nearest_oracle_scenarios=1024 camera_requests=0\n",checks);
+}

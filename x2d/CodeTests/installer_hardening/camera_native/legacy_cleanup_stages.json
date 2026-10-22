@@ -1,0 +1,1723 @@
+[
+  {
+    "name": "x2d-afc-port-r1",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/afc_x2d2_port/update_lazy.sh",
+        "sha256": "e05f6b2e8e2d0d174acc8abadf6da0d81f4eb222fe1fb56eb2115cc7cd5f0816"
+      },
+      {
+        "path": "x2d/CodeTests/afc_x2d2_port/update_loader.sh",
+        "sha256": "745e38773fb3372fddef966fd079bdfd2bab46715bc780196b2801ee4cc6d322"
+      },
+      {
+        "path": "x2d/CodeTests/afc_x2d2_port/release_space.ps1",
+        "sha256": "a114d517fc3b0d4fac0c76b825844107536c2b5b038c0b7e602049cf7c79a4af"
+      },
+      {
+        "path": "x2d/CodeTests/afc_x2d2_port/load_candidate.ps1",
+        "sha256": "1ac40021f813fc4db379365cda767dfee71df412442912363d54391ee0967bff"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-afc-port-roi200-r1",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/afc_x2d2_port/roi200/load.ps1",
+        "sha256": "320b4368d0fb198f5174eb57a40fb253b36aa6242af309ceb4f81a7be0239428"
+      },
+      {
+        "path": "x2d/CodeTests/afc_x2d2_port/roi200/package.py",
+        "sha256": "efded3d5b0f7d21300c103960a9db55cde4d730cd3d2b52301f5b55569302213"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/afc-x2d2-port/roi200-r1/package/install.sh",
+        "sha256": "b4f491fbb8dab9b51e690033bfae6688bb139d6d2d460e9a359326b322372fd2"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/afc-x2d2-port/roi200-r1/package/uninstall.sh",
+        "sha256": "d1e790683fe271df38941e72512d49b571076b10c854ce91379f8885ab175d23"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-burst-d7099e29",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/raw_stack_continuous/finish_switch.ps1",
+        "sha256": "c14f1035c778149f3cd872192ba5fdcf67ffcc22f5b716ed43b7804549d70ab7"
+      },
+      {
+        "path": "x2d/CodeTests/raw_stack_continuous/load_candidate.ps1",
+        "sha256": "0861d78a08c96deac82027a500c4822d8ad8902380727b74e351baa7af07a471"
+      },
+      {
+        "path": "x2d/CodeTests/raw_stack_continuous/recover_install.ps1",
+        "sha256": "c156f2e07ba18d873c93e4429f4b15f59d059d8820dada1e735695a3157f6de4"
+      },
+      {
+        "path": "x2d/CodeTests/raw_stack_continuous/finish_prepared.ps1",
+        "sha256": "d8a286e8f0e04f498a472152b443b93de3b86c0515c83de0196e719e28b08177"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-afc05202",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/afc-menu-install-r2/deployment.json",
+        "sha256": "2f1473b5335fbea75d7d408ab8c6b4c0f66dded4c4870f0727c1983279911485"
+      },
+      {
+        "path": "x2d/CodeTests/afc_menu/prepare_install.py",
+        "sha256": "b2b222eea419351b2569b60c0a1d99cbc8e2ee786d181d249b80b400d09a0993"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/afc-menu-install-r2/load.ps1",
+        "sha256": "7acca5598fe1f352622505263a78b6a4e4f9ced4dc85a58f217cbf99263bf8c4"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/afc-menu-install-r2/activate.ps1",
+        "sha256": "39beea6c7845aa4a581f7264e1a716f4992bf471b94bdf0927fd3a26212e71f7"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-afc05303",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/afc-menu-original-icons-r3/deployment.json",
+        "sha256": "b7ab94d4b28dcc2f5a21b1ffb3d2fd0bbe965d6319fd31372df5e05d587a1a38"
+      },
+      {
+        "path": "x2d/CodeTests/afc_menu/prepare_original_icons.py",
+        "sha256": "a90131c3d498b50ca2ad71aa9e4cf603be38637f083e9e1f692c6c75081f5262"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/afc-menu-original-icons-r3/load.ps1",
+        "sha256": "0072616ec93448ba5dccbb05b0beb7504eb2c4e601c660bae98317bb6d5033af"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/afc-menu-original-icons-r3/activate.ps1",
+        "sha256": "ecffe3c9ba274fa5bad45701ff6571cde327bdf5d17bea50d869b05809b1499a"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-afc05404",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/afc-menu-original-icons-r3/gate-fix-r4/deployment.json",
+        "sha256": "09e68c5579885d2845185c0204a3ebd6fcf2e5f19b26e9ab0d7842db98036414"
+      },
+      {
+        "path": "x2d/CodeTests/afc_menu/prepare_gate_fix.py",
+        "sha256": "01269fadd7d13f7ecb6fcc11c960574f0f0b83a4b4765f4cd854e80b6b480b5f"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/afc-menu-original-icons-r3/gate-fix-r4/load.ps1",
+        "sha256": "5fa19f8ac8770d10f0a90560f17eca6a55925896cf1ea7ce996a91b78459080a"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/afc-menu-original-icons-r3/gate-fix-r4/activate.ps1",
+        "sha256": "750f3e4b5037e4e3cf3e7ac0f55fbdd0d93b87685ccae7bb2f7926e034eb541e"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-afc05505",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/afc-menu-original-icons-r3/parameter-icons-r5/deployment.json",
+        "sha256": "849a764bfeec9b97dfe47d69c30abb6586b8876200e5a352f8d7aeeec0103e1a"
+      },
+      {
+        "path": "x2d/CodeTests/afc_menu/prepare_parameter_icons.py",
+        "sha256": "1f06d9ec8d9fb32d9a4eb312ff99df6187fd42539a3e2e78b06d10c87f44521a"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/afc-menu-original-icons-r3/parameter-icons-r5/load.ps1",
+        "sha256": "35729c629726918c88abb3908f4e819ee2de6a2b5a7b81ca6efe98a38932956b"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/afc-menu-original-icons-r3/parameter-icons-r5/activate.ps1",
+        "sha256": "d0800f730a848ee5e0df5a44035c731fcc09b5b3fab1ca3eb575862f8bc73e04"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-f052ab01",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600/deployment.json",
+        "sha256": "0e6b0d863da22a270db1935ae811269abf3fba1f8ac02e708f11f14ce42e4d61"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600/load.ps1",
+        "sha256": "4c86dfe8e0d5a18b421f50d3dfa3d8c5bf17656fe5f400425ed33beb154781a6"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600/device.ps1",
+        "sha256": "b4022ed551c73cffddca07b9df72615cdf4d1c115ef94d3bb7bc86d44b4e8a4b"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600/transaction-read.ps1",
+        "sha256": "ccd912cb9c74c59368e55c0891f9a4243c01a7bb3bad3ce48f32e77df789799b"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-f052ab11",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600-r2/deployment.json",
+        "sha256": "238f18eb6671b0a76a3e6a6e43ac06b60b7873fe616a274ec81c738172a15472"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600-r2/load.ps1",
+        "sha256": "af8a96665570085e7187d58b4f8771adaa81baa667d50944d66103e18abae96d"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600-r2/device.ps1",
+        "sha256": "657cbf71f2fbf29f0608a41ab151b27cfa4ae32f01d8cf6e32ac19f97ef7b787"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600-r2/install-payload/install.sh",
+        "sha256": "75b9d2002a99ed7bea295138a8de8532d128c3835cf90e48adadda51f09395f8"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-f052ab12",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600-r2-restore/deployment.json",
+        "sha256": "c5cd25fb1f0467d24e0c2e28ab3f2e656fb4b6b27af6608f0280770412fdc65d"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600-r2-restore/load.ps1",
+        "sha256": "e7799f8e4e1c84a2e7fe20ef5ddacab2244e3d3d4fa2cba78600828955a9419c"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600-r2-restore/install-payload/install.sh",
+        "sha256": "ed71fea23fa7c68ba2f28b614e1328672a887da12f895414c61bbb44d33b752b"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-f052ab21",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400/deployment.json",
+        "sha256": "d81ce6a1a4c904bb26407ecf50824662ccc46a9ef80e118960e0ca8a7618fd97"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400/load.ps1",
+        "sha256": "7c4287e92f9d4c7641fe533a63289a05fd7b737b485c22bbc3445169a4dfbdf7"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400/device.ps1",
+        "sha256": "4531c64674a507e2e0dd318b65bba509f483ebb6cbfaf183d6354800b64804c2"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400/install-payload/install.sh",
+        "sha256": "05e990412a02c735cb7673e296b1f6eee32b23f13f1c9f6747b85cec422a4f24"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-f052ab22",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400-restore/deployment.json",
+        "sha256": "883289e3adb490afd0c47ca8bccf977500d2c2a20e17a03659189e9e7dd0cc78"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400-restore/load.ps1",
+        "sha256": "22e845536b0bfde4f37ace3b4557a52643636744911c9c8c4b6f0a801b956eb6"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400-restore/install-payload/install.sh",
+        "sha256": "2e6572c95dc2ff76ff10ef15a783da4fa851b977c0cec15b3d0aee53b9c3eae3"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-f052ab31",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400-r2/deployment.json",
+        "sha256": "a94ec16d4b994c3ca0badc0a2c3c8c4575f8b3ff21b410323ab925851467a718"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400-r2/load.ps1",
+        "sha256": "dc7790782c3d478de838e9d98e96ef4c15be23d1c25a4d53a1ac7924f658cc5a"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400-r2/device.ps1",
+        "sha256": "d93a4841328b8fc7037f55d4186ab5f414640edaf28f17f4d42434aec319a007"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400-r2/install-payload/install.sh",
+        "sha256": "0a858128b42e6189e095c8f37cd73b64c5114a99c24cc93e0c3444b0cd708d86"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-f052ab32",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400-r2-restore/deployment.json",
+        "sha256": "843dfe8d8f961d9110f32a9aef83145d107a9bb0e1b2b201c5cbfa6c1d698d0c"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400-r2-restore/load.ps1",
+        "sha256": "05e9667abd11a50e510388789e7021cbe093a1d052156e464ba3eed8f4c40748"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400-r2-restore/install-payload/install.sh",
+        "sha256": "76f155e0f468b58b02991c5bedfe1a3a3b53d54a856adb420fb8535d375f0946"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-f052ab41",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground-stack/deployment.json",
+        "sha256": "bc0ef3bb582d3c19144e6db06d66b63af650b6ec03e29a31136d79013eae6a0b"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground-stack/load.ps1",
+        "sha256": "2c80621f3013bb75c29e4e867ced0d40de238eebea06e5b57894831af0bdaf9d"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground-stack/device.ps1",
+        "sha256": "cac99f1d2c52b1453b0deef240516eb011075b022f580e553d35a0f495e8e019"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground-stack/install-payload/install.sh",
+        "sha256": "cea7e4b2ef434f9cd36af9dd30a94d773088c2d5be16df87614bf5246b94f232"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-f052ab42",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground-stack-restore/deployment.json",
+        "sha256": "7fc0acce7c11a29183a2b785a747474155cd09b60755be7c62f3ed754c1635e8"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground-stack-restore/load.ps1",
+        "sha256": "7c33bd0c0a91a1a41cfcda166b336c3d1187115a7d2736008cd989cb25463732"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground-stack-restore/install-payload/install.sh",
+        "sha256": "5c5e45c7db5c64b99b5d2b0a6d053abdf33b7d42e94f289d208c0d2e257c86f5"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-f052ac11",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600-r2/capture/validation.json",
+        "sha256": "25b08d2d841768f15bedc0ec10f1fab00bf197752ff891f277bd43c8ef4e5f75"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600-r2/capture/capture-gate.sh",
+        "sha256": "227decb6a09850d33770bd233387d9465c147aa95a19efc701a0b3c54c7e3ff3"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground1600-r2/capture/AutoCaptureGate.sh",
+        "sha256": "227decb6a09850d33770bd233387d9465c147aa95a19efc701a0b3c54c7e3ff3"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-f052ac21",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400/capture/validation.json",
+        "sha256": "3ef868f5ca8892db013b6fb4bc4263570cfd5b8426e8625a8b63b6f5ee1954ca"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400/capture/capture-gate.sh",
+        "sha256": "4d544eff7aece1a20121ff9c1801343863c8d9fd048fefe05795ff037f823555"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400/capture/AutoCaptureGate.sh",
+        "sha256": "4d544eff7aece1a20121ff9c1801343863c8d9fd048fefe05795ff037f823555"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-f052ac31",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400-r2/capture/validation.json",
+        "sha256": "d40f496e8811cd5adae0160f1dd5661110c06d3e9d7249798950be750f6682ea"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400-r2/capture/capture-gate.sh",
+        "sha256": "9c356e448afde9dd32e65cf09bd2bedfe3a50bd8546b24345600a91b069ba1cb"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground400-r2/capture/AutoCaptureGate.sh",
+        "sha256": "9c356e448afde9dd32e65cf09bd2bedfe3a50bd8546b24345600a91b069ba1cb"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bv-f052ac41",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground-stack/capture/validation.json",
+        "sha256": "0fe7cb4b557f53b9c89c446ff39d29a6b7c7fff5f94aaf6466714874a1cd0dc4"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground-stack/capture/capture-gate.sh",
+        "sha256": "1c60f9dc7cb4a6e7f130d15915b2faea7e76661cacf5eec73e7aa3c73ac5971d"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-roundtrip-r52-20261010-093528/foreground-stack/capture/AutoCaptureGate.sh",
+        "sha256": "1c60f9dc7cb4a6e7f130d15915b2faea7e76661cacf5eec73e7aa3c73ac5971d"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-bw-09c71a13",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/source-bandwidth/09c71a1399ffa95a/build.json",
+        "sha256": "24ec75c45fa81c1a9c37971027f3336cbf4a01c3e5246bf9d826b1fdf187695f"
+      }
+    ],
+    "markers": {
+      "probe": "fced6570023806216652c96c0f9e714198f85e04fdfb6e48c797d05e17b11513"
+    }
+  },
+  {
+    "name": "x2d-bw-311261d1",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/source-bandwidth/311261d12554ce76/build.json",
+        "sha256": "adfa65919b2a48dd69477e2ec0caef281fed88c8da5b30ea9a9a814162968db1"
+      }
+    ],
+    "markers": {
+      "probe": "69fe1fcdc649bfaa61eb208cb86628682cdcb125691b3ab6f5b0930ef3650d41"
+    }
+  },
+  {
+    "name": "x2d-bw-47f45ccc",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/source-bandwidth/47f45ccc40740a53/build.json",
+        "sha256": "a9ca5f0c6aad1ff7c76da684e846f4150e007aa1c47309407de99d40f2423818"
+      }
+    ],
+    "markers": {
+      "probe": "8e7b6674dda966ae79af8c5f44dbb54846015811555eba3886427f67260345a8"
+    }
+  },
+  {
+    "name": "x2d-bw-5acc46dc",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/source-bandwidth/5acc46dc85ffb308/build.json",
+        "sha256": "7cebed937cb61061cc9f534c8da63de5fc516fa7cb22495192e7c792f0ec2510"
+      }
+    ],
+    "markers": {
+      "probe": "b4fe4aac533ece2c3299174d9ed72d316a96290ea8c44b4ae87343e3f5495549"
+    }
+  },
+  {
+    "name": "x2d-bw-89b2178e",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/source-bandwidth/89b2178e9c588c02/build.json",
+        "sha256": "d191135e51af7345323b9681c24b07520caea87096ab4ae92517a31c56175989"
+      }
+    ],
+    "markers": {
+      "probe": "dabf5dbf947b1e9a2627b5f82c4be61ec2f5c30f50a53a5fda95ac996f7441a2"
+    }
+  },
+  {
+    "name": "x2d-bw-a2ce53fa",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/source-bandwidth/a2ce53fae78f33fd/build.json",
+        "sha256": "3a74db000a58835e6206cd62464e4b0362fa9eef90b2d89160ee65eb42284d4b"
+      }
+    ],
+    "markers": {
+      "probe": "08a0673f4728a19865c4e1af89279529cf23fbaa7581cc5ac0d955737327ad28"
+    }
+  },
+  {
+    "name": "x2d-bw-b3bb7d72",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/source-bandwidth/b3bb7d72ecc0d182/build.json",
+        "sha256": "0bddc3112fb63b08d0219f5dc68a24439d2a04fcdb616ca64f90386ff2ef3e33"
+      }
+    ],
+    "markers": {
+      "probe": "90c51cf137c663547a93364cc73ad50df9a3dfdbce0d672a90933bab2064b12d"
+    }
+  },
+  {
+    "name": "x2d-bw-c8faee10",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/source-bandwidth/c8faee100de7e450/build.json",
+        "sha256": "b2e3768da9550046c14b338f831fc0f34b1c9b61f744922dd0990881363c1067"
+      }
+    ],
+    "markers": {
+      "probe": "33df47785c3bda3fa9c58b25ceeff64902ceb9dc84f0813ac34ec594486f42c3"
+    }
+  },
+  {
+    "name": "x2d-cf1-292b50b2",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/292b50b27eda2da6/readiness-fix-plan.json",
+        "sha256": "037b99d76b40bcaee0b1b60c7c35a78545ed6843e6b17fea63dfd7ce18d912ca"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-cf1-retained",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/runtime/revisions/2236ccc1e6ff101775cb/build-proof.json",
+        "sha256": "522fa1d20e0045ed3948258dbcf44ed12e44fc0c7c81ff0ec0d7c6b07506fda7"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/runtime/revisions/8f277de65b124692207c/build-proof.json",
+        "sha256": "fdd03b7c79d0ebabec82ce047906ee0cb6d98bdbddd007b2bb3901331cb4b0e4"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/runtime/revisions/cfb195f9a11918e529b8/build-proof.json",
+        "sha256": "f15bfd06262cdc47fed64cf570a66a08ad8332fba06fe535b0345b6d16d481a8"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/runtime/revisions/d2786c635b1357b53a79/build-proof.json",
+        "sha256": "48f13a11b0eddf8142165e607456b547f93561b2bb1908a2eb391e2d107ad9a3"
+      }
+    ],
+    "markers": {
+      "flow-brdy": "5c294ad95a25b08e5fdbdab73e5394b10445d59ff4fd23053735294037b1a009",
+      "flow-rkey": "f965a087a3f943bdbbea202829ff2bc21197a199791e3d2151d2eaa6ca71eb86",
+      "flow-rmdl": "f9a3b9aa7304d670506e1111357d49d912215ca0af6b5498385b63f417a20850",
+      "flow-rrh": "28721d288d9aadb1ba4e77848515c80ec9ba7771bdfc60e1a5db6566b799fc15"
+    }
+  },
+  {
+    "name": "x2d-cf10-6f529c83",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/6f529c83a2b31b88/readiness-fix-plan.json",
+        "sha256": "2ba625c32c77226e9d067e1790248998137913158dde400955794e66e5ea7239"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/76b9662ccccb9c85374b/staged-duplicates.json",
+        "sha256": "e708853d6638fa79dfc68a7cdcf3126799905f9e7e708fcfd7ea689975c88b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-cf11-dff913f7",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/dff913f76c6ac2e8/readiness-fix-plan.json",
+        "sha256": "52c9ff2c44a62630fc7be3fe382c07c7f9951a59e2b80b93d1f2d844398c0d8d"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/76b9662ccccb9c85374b/staged-duplicates.json",
+        "sha256": "e708853d6638fa79dfc68a7cdcf3126799905f9e7e708fcfd7ea689975c88b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-cf12-c2189450",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/c21894506f35c383/readiness-fix-plan.json",
+        "sha256": "fa9bf6d21b4fc5e630b9060665774900c54ad69c4082f97a2559d4233d490542"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/76b9662ccccb9c85374b/staged-duplicates.json",
+        "sha256": "e708853d6638fa79dfc68a7cdcf3126799905f9e7e708fcfd7ea689975c88b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-cf13-af57d639",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/af57d639f79a2f4d/readiness-fix-plan.json",
+        "sha256": "01ef85145d3570e27336a182dbd117cb1b949fc7f139e2e20179c3c98cec455c"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/76b9662ccccb9c85374b/staged-duplicates.json",
+        "sha256": "e708853d6638fa79dfc68a7cdcf3126799905f9e7e708fcfd7ea689975c88b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-cf14-144d9e80",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/144d9e80bb75c18c/readiness-fix-plan.json",
+        "sha256": "df11936124636db39d4192896f3ec9ee69af5ba722d323ce326a31f059338dd3"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/76b9662ccccb9c85374b/staged-duplicates.json",
+        "sha256": "e708853d6638fa79dfc68a7cdcf3126799905f9e7e708fcfd7ea689975c88b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-cf2-a4c5b06f",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/a4c5b06f3faec4fd/readiness-fix-plan.json",
+        "sha256": "a0eaffc3182ce7ab0951eaac60b8f44ee29eb2c9377b5aef4320fb4f09e9534f"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/76b9662ccccb9c85374b/staged-duplicates.json",
+        "sha256": "e708853d6638fa79dfc68a7cdcf3126799905f9e7e708fcfd7ea689975c88b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-cf3-d72f8666",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/d72f86664dc4f68f/readiness-fix-plan.json",
+        "sha256": "ed70dff38e6a18970928b185e946447a268f4888c23858f67ac6e0b46b5e5ad5"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/76b9662ccccb9c85374b/staged-duplicates.json",
+        "sha256": "e708853d6638fa79dfc68a7cdcf3126799905f9e7e708fcfd7ea689975c88b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-cf4-562f5848",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/562f58480e0db375/readiness-fix-plan.json",
+        "sha256": "ffe01e879faf9f40680f33960252abf5d42a094fa81bbd9bf0be5a9eb7064622"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/76b9662ccccb9c85374b/staged-duplicates.json",
+        "sha256": "e708853d6638fa79dfc68a7cdcf3126799905f9e7e708fcfd7ea689975c88b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-cf5-e366b390",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/e366b3909704824f/readiness-fix-plan.json",
+        "sha256": "f536a0667d730410a4f303c7907a1db1c72ffd2bdb6c7f6563323fa4606458a6"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/76b9662ccccb9c85374b/staged-duplicates.json",
+        "sha256": "e708853d6638fa79dfc68a7cdcf3126799905f9e7e708fcfd7ea689975c88b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-cf6-3d897645",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/76b9662ccccb9c85374b/staged-duplicates.json",
+        "sha256": "e708853d6638fa79dfc68a7cdcf3126799905f9e7e708fcfd7ea689975c88b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-cf7-16f4300a",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/16f4300afd781168/readiness-fix-plan.json",
+        "sha256": "9700f6983f2b7de210c1466c1842718deaa42e4f95d8b4caa3b62584278b1a85"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/76b9662ccccb9c85374b/staged-duplicates.json",
+        "sha256": "e708853d6638fa79dfc68a7cdcf3126799905f9e7e708fcfd7ea689975c88b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-cf8-3d897645",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/3d897645a1f63e6b/readiness-fix-plan.json",
+        "sha256": "b9e940180b8d68b8a8e15d0360880172abf5c0fa60a6a6f4ffe033bb6cf2ac10"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/76b9662ccccb9c85374b/staged-duplicates.json",
+        "sha256": "e708853d6638fa79dfc68a7cdcf3126799905f9e7e708fcfd7ea689975c88b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-cf9-cc39fd1f",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/cc39fd1fe58c7bfb/readiness-fix-plan.json",
+        "sha256": "f59b2f426c7ae953cb503041fe427c825f88f0e02f7af4ed992eaee1122ea74e"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/76b9662ccccb9c85374b/staged-duplicates.json",
+        "sha256": "e708853d6638fa79dfc68a7cdcf3126799905f9e7e708fcfd7ea689975c88b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-focus-8c427a80",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/raw_stack_continuous/cleanup_focus_retained.ps1",
+        "sha256": "e73060e6ad65df66a7470442d71c7201c991b6f1f2410fbbc501b4eea8e8eae8"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/8c427a809881d757/readiness-fix-plan.json",
+        "sha256": "e1f60d35e41a0b89ae1037582df6abeedf04d6d39c23df92486e375a9da9b1f0"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-focus2-692ebe64",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/raw_stack_continuous/cleanup_publish_retained.ps1",
+        "sha256": "ff126fbb5a129e50c5d204206415e657a7edbbb9ca0dddd5c7e7151c57f52449"
+      },
+      {
+        "path": "x2d/CodeTests/raw_stack_continuous/cleanup_ui_burst_retained.ps1",
+        "sha256": "9319b14d5d552f6add7376e65cd0f343cbf70f174b7861d9ad02c6ef530476f3"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/692ebe64e71022d9/readiness-fix-plan.json",
+        "sha256": "fbb2f6db114bbcc8fb8be7c0340c63e8ae3d7bbff9897000b8d2c70c17f62ba6"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-lv1-a2deae90",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/a2deae907f6bb632/readiness-fix-plan.json",
+        "sha256": "79c283676a2471fa323ed311ab1a13c40a9352e3870701da446dc047ef957d0a"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-mg1-37c5c7b6",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/37c5c7b66b859c05/readiness-fix-plan.json",
+        "sha256": "4053bfbe61df3c5b09759558683305cbe49bbb6870479548eaaf649cc2584471"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-mg2-3d712ea4",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/3d712ea401048738/readiness-fix-plan.json",
+        "sha256": "ad21692cc000ef56ca0598e6e35d2807351d1cc952ecafd085853359fa0dfe96"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-model-53efb781",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/53efb7812046e283/readiness-fix-plan.json",
+        "sha256": "51620ed5f983544daa0e72d4e5a3e14f6c2d1597ba9e6a27226d8cbede3b61f4"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-pub2-92aac148",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/raw_stack_continuous/cleanup_ui_burst_retained.ps1",
+        "sha256": "9319b14d5d552f6add7376e65cd0f343cbf70f174b7861d9ad02c6ef530476f3"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/92aac1485b43ae8a/readiness-fix-plan.json",
+        "sha256": "3bec82d14c1bfc5e9e502f9e410e0bc0ab95d4bc1332a098d1b2da86c6b66e0e"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-publish-5a1d2e78",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/raw_stack_continuous/cleanup_publish_finish_retained.ps1",
+        "sha256": "f56da0e0cdfb3b5a104762061e7331303da5752238d72037357d8e7db1bf50f7"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/5a1d2e7833aa8195/readiness-fix-plan.json",
+        "sha256": "fb8f37715d1f1cfa4561fc9275ba267857f7c0216f187c3f0ba46ad1a8218b84"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-ready-26daa2cc",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/raw_stack_continuous/finish_readiness_fix.ps1",
+        "sha256": "1ec9d3dc29c1fc17e61a41258e06012a5176f16f2bce6cb494af7b594f16b98d"
+      },
+      {
+        "path": "x2d/CodeTests/raw_stack_continuous/install_readiness_fix.ps1",
+        "sha256": "e419651f7f36a5e27b36c2ae14544800e21154f08ece92a0d746ce464c96f07d"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/26daa2ccf93e146b/readiness-fix-plan.json",
+        "sha256": "b4bf97862255290a0f8118fb611236ade0bf70ab9a244cc5aa5a6b871ff67320"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-reentry-c791c85c",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/c791c85c69dfa12e/readiness-fix-plan.json",
+        "sha256": "8f9b3a6d643770191ff635d13312276ad81fea536d6c130ddf21230810efdbbb"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-rh1-3153ab61",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/3153ab612e956f82/readiness-fix-plan.json",
+        "sha256": "34304fe31f96f77b58a3f6c561701422a2c2e7aeec1022ce1c32f13ff9a1673b"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r10leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceLeafIdentity.ps1",
+        "sha256": "d43f0766554e840dd3dfd4cc58835667a40f530addbb34460ce142e17276be29"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r10-leaf-identity/probe_leaf_r10.sh",
+        "sha256": "895302c6a8060185c495069b95b1dec02cf551868a8690ac56fca593b3a12a38"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r11leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceLeafStemTile.ps1",
+        "sha256": "679c283d5239a2255a42b1d600ff0d76123e0927f91d32989078278ad947cc49"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r11-leaf-stem-tile/probe_leaf_r11.sh",
+        "sha256": "932862982499404f4d41539833d5290f65ea6a3f9ad4970bdc523250887f7666"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r12leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceLeafStemSmall.ps1",
+        "sha256": "250ecaf4865d32c9a64439bbd92d6e6d8629b4586c8f8a54337897d8d5f44fe6"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r12-leaf-stem-small/probe_leaf_r12.sh",
+        "sha256": "5f68859846885fd345877eb51dd54197f94ea35a521d2f2628095e85ff86556d"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r13leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceLeafStemFull.ps1",
+        "sha256": "6d2d15494174706a986abccd19749ed4bbadce809bf5d35146493c4984c7fd7d"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r13-leaf-stem-full/probe_leaf_r13.sh",
+        "sha256": "f4a7d5868fa64c9234cfc93f53747bd0b2abdfdc596dc49ed994ca0f81704042"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r14leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceGraphSchedule.ps1",
+        "sha256": "1f09ede6337e98e790bf8d9b6b79090f486e034903e4aea58454295a17087ade"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r14-graph-schedule/probe_leaf_r14.sh",
+        "sha256": "3b8561760434a5e5eca098ce26099023a1fc2b95c9827729c0a2419edae1ee05"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r15leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceDspConcat.ps1",
+        "sha256": "f30b352d69c8a84a047569ca12f5add8aeb82e0a8ae6d276ee4a1155e276ef90"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r15-leaf-dsp-concat/probe_leaf_r15.sh",
+        "sha256": "644515a737abcb893992e913e03f4a8794bdafeea14f1c9bfc1a65b8090480c8"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r16leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceDspConcatRuntime.ps1",
+        "sha256": "0eb12b42131381ed75803f1ac1ca89d83de1d752e6f40d4d03b293a2c34d67d3"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r16-leaf-dsp-concat/probe_leaf_r16.sh",
+        "sha256": "5a42d77de3998cf1cbdd06c17b0559585e0bf761ea911066f91f88b4a1f53289"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r17leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceDspConcatCore.ps1",
+        "sha256": "815b55da0f049f915ec3a87d4c773083148dfb85ee8d0f2d2ed4bd7e8d624a1d"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r17-leaf-dsp-concat/probe_leaf_r17.sh",
+        "sha256": "e52b3f8fd830ce16931b6fcc912e4c31c05b254e93fd1e15b0d7ba011bfacea3"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r18leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceDspConcatMapped.ps1",
+        "sha256": "172d059e8ae51b57e4086f0856eb570b683feaa7f0fed8e8a158bc100523b712"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r18-leaf-dsp-concat/probe_leaf_r18.sh",
+        "sha256": "2321a88a278ee8bc29b3cba8e314721ec4f6c07141146beb885977cd32f02fe9"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r19leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2OutputRead.ps1",
+        "sha256": "96565d276a8bc9b5adaef9fe3decdfe177b548f5952eb133262125f3c458f275"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r19-leaf-ofm-read/probe_leaf_r19.sh",
+        "sha256": "4e9fd357246b545edcb45b769ab8d88a2e8072a69b9fec7e8ea34ab621b66d12"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r20leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Resize.ps1",
+        "sha256": "809b90099f4550b3f817f94cf7690456d9800a32d755961e279391aed92b9444"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r20-leaf-resize-copy/probe_leaf_r20.sh",
+        "sha256": "b8edaec2991b65774039cdca81f1e7db4acd0c0c1eb26514a85f826eadef7988"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r21leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2ResizeNative.ps1",
+        "sha256": "b35b8eaf661c252ff5aa539c7a71ee09fdc751eee906f3b153b48009e8ce41e3"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r21-leaf-resize-native/probe_leaf_r21.sh",
+        "sha256": "da021bb2eab8884840fdf97d4a97da6219958eb6c5703eed356d77093a63dc4a"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r22leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Fused.ps1",
+        "sha256": "25f96390240019a684dd0cf9a1332d05a1c7bd3f4c9d936eb6c89c8796d381c1"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r22-leaf-graph-fused/probe_leaf_r22.sh",
+        "sha256": "8e1bc72b34f2e3cfefd142e43247a3e0cfec4d9246e18fe37b5459fcda30ccaf"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r23leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Prefix4.ps1",
+        "sha256": "c3ee82b8a0dce98f9cef6afa260cf59650a0836c8227e6f7bbb7e4e879aeaf49"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r23-leaf-graph-prefix-4/probe_leaf_r23.sh",
+        "sha256": "1746bb2ded877365cb053e44b281029cd08c18c3a4838e2670124b55266bd2fd"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r24leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Recovery.ps1",
+        "sha256": "3067b14982adee0af94fdc10b8ea3c9299e444567f14c88823cf11ada13a025f"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r24-leaf-identity/probe_leaf_r24.sh",
+        "sha256": "8e5b505c3e30788e65814f432c4862dc8cebd814f61da486202e97ffc6f21bf9"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r25leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2PostRestart.ps1",
+        "sha256": "fa39aeb387ecbfc6477e9e9c3dff671ef105a2a46ae2986177f2a6b39c352eaf"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r25-leaf-identity/probe_leaf_r25.sh",
+        "sha256": "f4da54ed2f48f5679b5b800d7429632bc640172933aaceeaf3dd0c85afb91144"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r26leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Multiblock.ps1",
+        "sha256": "0bb2fced39699889f837ba207be022eca93905e6065a7f5fe7db864f9a4ead58"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r26-leaf-multiblock-bounded/probe_leaf_r26.sh",
+        "sha256": "39c5d10ddffcab2fbe3014348892d8d7f49ed28ec4b08c814fae96d66bf44d17"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r28leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Rows24.ps1",
+        "sha256": "b4174224366ab9fee076e9208251b479a979a6d7e8e735725353bf5e698c9101"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r28-leaf-multiblock-rows24/probe_leaf_r28.sh",
+        "sha256": "d102a130b4d2bd805a44116909ff1e9fccd37ba367265eef5ed5d39cdd71905d"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r29leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Aligned.ps1",
+        "sha256": "335047ac96a8d9e5bb1c3dfcdd67c498c7c02ff3c59edf2b9602d25d578e4ca3"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r29-leaf-multiblock-aligned/probe_leaf_r29.sh",
+        "sha256": "abe8f7456d62a62cde5118bf26bdf801dbd0c25845ce2995670d003ef17e1ce8"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r31leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2NativeMulti.ps1",
+        "sha256": "5854806e92e1f132b9822d21380aa53889b8da04307e45632043ac0abc1203f1"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r31-leaf-native-multiblock/probe_leaf_r31.sh",
+        "sha256": "226f0a4b014fbe63692b3d9ec9c2790754f1ae964e16d8ed9b2b071de89e525c"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r32leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Line2048.ps1",
+        "sha256": "1e9f54068106b3ac01a16e27432e3d19439cc6024895da1997cc517b0f925a94"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r32-leaf-multiblock-line2048/probe_leaf_r32.sh",
+        "sha256": "5462bcaf28ce6e3abfdf25f31b72833a128efe1261230bb3c99de02d2f97a72d"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r34leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2NativeRelocated.ps1",
+        "sha256": "1616f2d0f0de730aa9ad6dab8971c9297fdb3aeecfe2dc053299df9d4c23b83c"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r34-leaf-native-multiblock-relocated/probe_leaf_r34.sh",
+        "sha256": "934e14a1484c1e2156c5a2a72d0c79af1e6c7915a2f0484568737175b5b783ff"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r35leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Even24.ps1",
+        "sha256": "89e9c3bf68cb83cea29e1a080ae07e31406237101a3414be13006d9fafe9fc51"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Even24Output.ps1",
+        "sha256": "cfa8fb74f67af4bbead5ac130756d6d60102afa4d4b5d5652cd5f45bf66ec88c"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r35-leaf-multiblock-even24/probe_leaf_r35.sh",
+        "sha256": "1eb61335b652783d7c7a8d63c4033a504c8f878b6cb680040991e7c72509cff4"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r36leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2NativeRecompiled.ps1",
+        "sha256": "c87bacd957d66dc93ca0a1b6997a496ab945c2404171cc83c9665bd1b9a46a49"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r36-leaf-native-multiblock-recompiled/probe_leaf_r36.sh",
+        "sha256": "5e7e6dcff9bce4e09f80d7cca5a00d1fc0cf4fd3cbd2370552b0d2bcc2bd5e79"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r37leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2NativeScrfdWeights.ps1",
+        "sha256": "91fbeabcbdb82822e3d72ffe19fb0218239d44d121c6059cbe75ead3bf609538"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r37-leaf-native-geometry-scrfd-weights/probe_leaf_r37.sh",
+        "sha256": "ef811c5cd6f26a9cbf76ce13105f9e9726634a9354e5691ccbfba49bd132b644"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r38leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Even24NativeOutput.ps1",
+        "sha256": "019f358c68b30de11489822c6fbf4c0bedc3639f125eb2bb54fc1298f606b4a2"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Even24NativeBlocks.ps1",
+        "sha256": "5dfc880ee34966da87995b168e3f8a251b1d75155cecf2a5b2fc951103f42d38"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r38-leaf-multiblock-even24-native-blocks/probe_leaf_r38.sh",
+        "sha256": "56344a6cc95c57343f29bbf6b1e394fb4c4b5acc9d4b8a9e89c3ee184cca75fa"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r39leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Patch64.ps1",
+        "sha256": "335af9c248b2cbbaa6fc79422e173f603ddbfa3cf12be7897ed540f9c9171ee8"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r39-leaf-multiblock-patch64/probe_leaf_r39.sh",
+        "sha256": "e2817274bd9592170058b402265899aa6f157ca5941038f51fd1656208b3af41"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r40leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2Spatial64.ps1",
+        "sha256": "92cd50b576a06d2f4ce38f9788aef0439882c8dc0ff7026e333d8d463645f4b5"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r40-leaf-multiblock-spatial64/probe_leaf_r40.sh",
+        "sha256": "5c33d0f5cfdf5b16f9b016e625d30195b92bdb44256b0bdb84570e4853344449"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r41leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2PointwiseFull.ps1",
+        "sha256": "fded4c1da4f1a42f6c8ca69c819bfac4a1f49277b24325fcf6c6cdf2e2f5bd52"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r41-leaf-pointwise-node15-full/probe_leaf_r41.sh",
+        "sha256": "6e19e7541169f5f0cc37d6c7e23b69fd3769a341357e5f5eacbe46f5c3681d32"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r42leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2FusedSpatial64.ps1",
+        "sha256": "07278856d3c318e7577d0a0fd0b64bc9e02a67ec8a77095b36e9e437e159c657"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r42-leaf-graph-fused-spatial64/probe_leaf_r42.sh",
+        "sha256": "014b5d8a191a603a2a6b6a9e663953f8848c7dbec7b06790bba7c525787f7879"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r43leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2KernelFull.ps1",
+        "sha256": "8be8d3f28da1954acf0494b89ecec9a59ee5f0072e7648a6d7d7834bc1b40a1a"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r43-leaf-kernel-node71-full/probe_leaf_r43.sh",
+        "sha256": "b3dd76e7e22600d6caa58509f1395d2d0ea8309737f83b9dccac5c01b6417591"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r44leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2FusedKernel24.ps1",
+        "sha256": "9097f24cdddfbf214277268627707d133a00aea5e77a069c1c35ac2c733367f0"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r44-leaf-graph-fused-spatial-kernel24/probe_leaf_r44.sh",
+        "sha256": "07ba02d043d5b22b0cbbe98574f93823bece3dd7b00a49d41ed3038c17b51ddf"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r45leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceE2FusedRuntime.ps1",
+        "sha256": "8c2f05c91a70748b96c32b75a6e7fd2e1d3d3270bb44f3cd2b35220cf6ac1f39"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r45-fused-runtime/probe_leaf_r45.sh",
+        "sha256": "8cbc5fac22d68dd52c89043eceb0194104828cc311c63ae185cfcaf4c65109d3"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r46leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceVcrSynthetic.ps1",
+        "sha256": "3a0173e5c24446c9cb214599f231a5379025f6d38fe5f3fbb4e6f9564edb1911"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r46-vcr-synthetic/probe_leaf_r46.sh",
+        "sha256": "dc1fdd2a3051ae9f699bd03872bdcdd49ff19147b23374fd0c77011bdde31d61"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r47leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceVcrStockSize.ps1",
+        "sha256": "4fa8c41eae4896a8cb0231c6c1520f4601740698d608418f2a35a8bb4b3e59d8"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r47-vcr-stock-size/probe_leaf_r47.sh",
+        "sha256": "af440e544ad27f5ce55d4da986e417d364dc31afadc9d8c900532989b1654465"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r5",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/probe_r5.sh",
+        "sha256": "320b39104e284cc06f51546c1ae6128aaf3314082c52eb233e8da97894616bf8"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceR5.ps1",
+        "sha256": "9e7b904008fd84d3a78c40af9e18ec7f86e543efb050ef197568b4f1f3835643"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/probe_heap0_r6.sh",
+        "sha256": "809bff963b2c9d1e4880899a0f96eb87d4dcd4b0774265e3cedba4809352fb13"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/probe_system_r5.sh",
+        "sha256": "936d3771d43284520e141d4097196593e339f3091892ddde70151d95f5604cf7"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r66-live-filter-b",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceLiveFilter.ps1",
+        "sha256": "45d13291a6b03b82641ebc32f6481e0b8534c5f737743a9d9ded1f1c953147a8"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/package_live_filter.py",
+        "sha256": "c6764b7188a1bfe5cbb79a0503d6611d0d656b2d373452d1bcd9f1566576da7d"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/integration-r66/status.json",
+        "sha256": "2267460f3696b4260ea7282cd9a0c112a60606fa3784619f7cd40b9a72d3f186"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/integration-r66/deployment-r2/install.sh",
+        "sha256": "8a880533dba0f975a65ce64d6586cf9f09fb1013f5731309aeea36cbdd9543e1"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r67-highres",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceHighresFilter.ps1",
+        "sha256": "6de95f9a135133062060bbdd6d7e3ea19fae687a19e4f1f0edd2e56d7d968f46"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/package_highres_filter.py",
+        "sha256": "243f9faf24a08c258537feb53be7b087dc3ea35761a220f791b5ca7098ceab40"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/highres_filter_install.sh",
+        "sha256": "e6e41eb46aac36110a6b52e801a9dc5178ed800f837d4529e399c48535e08acf"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/integration-r67/deployment/install.sh",
+        "sha256": "7ce642001174bd1fc3a79e5dacbdcb2f4a78c70390410409782e5cafeab97ce9"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r68-ml-resolution",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceMlResolution.ps1",
+        "sha256": "43e02772ca921681adca5e9f3cb29f04d3de5d5abb71a82b5c655ff7d1f0273b"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/package_ml_resolution.py",
+        "sha256": "e95284972b5ff3c6df8f0b0f2c83c6fcf96751fc94ea44aa549315d4e3edd312"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/ml_resolution_install.sh",
+        "sha256": "5b79b5592f74543009784034c1930ca5cd778b51b26c788050f08ee1fa1619fc"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/integration-r68/deployment/install.sh",
+        "sha256": "01b07c5f7a82a816af019cfb5f318ed10a0517468b55fd92fca41542cf688a87"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r69-ml-topology",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceMlTopology.ps1",
+        "sha256": "31de2ac8b7b943d6c45a125f29e3e69dd1e42f3053de375e9e18246bf1c4ab75"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/package_ml_topology.py",
+        "sha256": "3119a98ed285c46319a67424ed9dbc4dbcc4daec2c38a1d67d058fcebaf53d71"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/ml_topology_recover.sh",
+        "sha256": "365a77201d7f3cc1f4f70775f79f520f43cc64ea1a972cdbe6e589908c609df8"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/ml_topology_install.sh",
+        "sha256": "1ec339b4a3f2cadbeb460ce7b3ea86f01b4a861586b3956483f1df821ae6a2e6"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r6heap0",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceR5.ps1",
+        "sha256": "9e7b904008fd84d3a78c40af9e18ec7f86e543efb050ef197568b4f1f3835643"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/probe_heap0_r6.sh",
+        "sha256": "809bff963b2c9d1e4880899a0f96eb87d4dcd4b0774265e3cedba4809352fb13"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r6-heap0/probe_heap0_r6.sh",
+        "sha256": "809bff963b2c9d1e4880899a0f96eb87d4dcd4b0774265e3cedba4809352fb13"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r72leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceFullframe640.ps1",
+        "sha256": "e5cccd730decf2c416fa9a64a55a78d21375d73393f95faca13763b1db2b51d5"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r72-leaf-fullframe640/probe_leaf_r72.sh",
+        "sha256": "eb8ac1982e2ecef618a07f4207ea5fb8198abbdf2c77f09686c3cb0d31ffa434"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r73leaf",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceFullframe640Audit.ps1",
+        "sha256": "f7c65f6bcb66cde143b34d5581fc74d631bf574be5e177b85423f4cb5c78bfa2"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r73-leaf-fullframe640-audit/probe_leaf_r73.sh",
+        "sha256": "68bff3e6f53ba38bda118002decfc94b070b32b7653fcce2ecc2b52e8c3f5d02"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r7stock",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceStockControl.ps1",
+        "sha256": "858da33bf22af3fbf92dcd3e68d7b987cdf16eb2ff8bb1df9b2c2f68677db745"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r7-stock-control/probe_stock_r7.sh",
+        "sha256": "8518630818dd039cd54f051c92045e6d3e7151588b08067081baba761f719968"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r8stock",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceStockOutput.ps1",
+        "sha256": "4414891807c083290a782ad478a580181a8cd286e2c6e0b20da5f6db0eb07cc8"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r8-stock-output/probe_stock_r8.sh",
+        "sha256": "5a16479a8d00db4fcbe9da70bb720886739ef00728c08fe88daebfd8715b8504"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-scrfd-r9stock",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/build_stock_control.py",
+        "sha256": "c2362a30effe715f5201d5cfa3a8af592490e1e5872a87d23175b31167b9f5e4"
+      },
+      {
+        "path": "x2d/CodeTests/subject_tracking/scrfd_e2_device_candidate/DeviceStockContiguous.ps1",
+        "sha256": "60bc10449c2ba1958444873f1fd268cf43eb1ee3b7def48523d8a5a75f5f2918"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/subject-tracking/scrfd-e2-device-candidate-r1/native-contract/live-r9-stock-contiguous/probe_stock_r9.sh",
+        "sha256": "b18170de031e943c9f5cb1473f997634667111c62c8de90142a538fb0374f38c"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-sensor-flash-r2",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/sensor_exposure_candidates/prepare_device_load.py",
+        "sha256": "341978f42bfd1b45327d40fe8487b6e57af7391e43c2377c27a64716da4e2078"
+      },
+      {
+        "path": "x2d/CodeTests/sensor_exposure_candidates/Load-SensorFlashR2.ps1",
+        "sha256": "79c84fc79551f7ccf0303962946fb6922e919a566172f5fdc823c1abe27f2f4b"
+      },
+      {
+        "path": "x2d/CodeTests/sensor_exposure_candidates/Complete-VerifiedRetryLoad.ps1",
+        "sha256": "9ae1a4abc1c4807f9897f4196976aca83cf5d59a2764ba1ee9c7bd8dc724f093"
+      },
+      {
+        "path": "x2d/CodeTests/sensor_exposure_candidates/Relaunch-VerifiedSensorFlashR2.ps1",
+        "sha256": "485679e448cafefdb6fa1d4a710e8628d2d6f107ff039bfa47c45b7df395fadc"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-sensor-flash-r2-first-failure",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/sensor-exposure-candidates/device-reload-front-r2/deployment.json",
+        "sha256": "234a332082b00f63c035c4a85c26df33b5ec27375b15527139794b6b278070cc"
+      },
+      {
+        "path": "x2d/CodeTests/sensor_exposure_candidates/Load-SensorFlashR2.ps1",
+        "sha256": "79c84fc79551f7ccf0303962946fb6922e919a566172f5fdc823c1abe27f2f4b"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-sensor-flash-r2-prior-20261015-1917",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/sensor-exposure-candidates/device-relaunch-20261015-1917-r2/relaunch.ps1",
+        "sha256": "25c9380113050d0a5ecbbf3e2ee6e8104428f771ea1ed9abf392069a4bd98bda"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/sensor-exposure-candidates/device-relaunch-20261015-1917-r2/relaunch.json",
+        "sha256": "f59423be361fda30a84c9bfb33c1bc6a1a050f9cfd8caed2ceff143bbc2e332c"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-sensor-flash-r2-prior-20261016-2137",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/sensor-exposure-candidates/device-relaunch-20261016-213703-16bit-r2/relaunch.ps1",
+        "sha256": "32ee53518512f24ca597d3c7c7e77997ffcb6957923fe908f31a1a9bd47ca4f9"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/sensor-exposure-candidates/device-relaunch-20261016-213703-16bit-r2/relaunch.json",
+        "sha256": "1d808531c159a87ad815f6468e4122d7de28b2228f134e0be8bc4be7d4735990"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-sensor-flash-r2-prior-relaunch",
+    "evidence": [
+      {
+        "path": "x2d/CodeTests/sensor_exposure_candidates/Relaunch-VerifiedSensorFlashR2.ps1",
+        "sha256": "485679e448cafefdb6fa1d4a710e8628d2d6f107ff039bfa47c45b7df395fadc"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/sensor-exposure-candidates/device-relaunch-20261015-r2/relaunch.json",
+        "sha256": "d1be022ea8d95176b926a09a979c8a626448d54c293a65fb4f1defed3367a2f6"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-sensor-flash-r2-retry-failure",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/sensor-exposure-candidates/device-reload-threads-r2/deployment.json",
+        "sha256": "3f346f7d16960d3750eeb3e640bf7b9b04c7ef796d4b5c434b751d079929e50b"
+      },
+      {
+        "path": "x2d/CodeTests/sensor_exposure_candidates/Load-SensorFlashR2.ps1",
+        "sha256": "79c84fc79551f7ccf0303962946fb6922e919a566172f5fdc823c1abe27f2f4b"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/sensor-exposure-candidates/device-reload-threads-r2/deployment-resumed.json",
+        "sha256": "92aebf945026903955e715699fa020814064ad7e4370a004e98aadac54eab4e0"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-sensor-flash-r2-sampling-failure",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/sensor-exposure-candidates/device-reload-sampling-r2/deployment.json",
+        "sha256": "0182510bf81bca7491ea71ea56eac3de6324e388fa6de3d50eea0050537842db"
+      },
+      {
+        "path": "x2d/CodeTests/sensor_exposure_candidates/Load-SensorFlashR2.ps1",
+        "sha256": "79c84fc79551f7ccf0303962946fb6922e919a566172f5fdc823c1abe27f2f4b"
+      },
+      {
+        "path": "x2d/outputs/4.2.0/sensor-exposure-candidates/device-reload-sampling-r2/deployment-resumed.json",
+        "sha256": "1a8c7bbe084a66e0ed397a6e15c46ef3b95ebe18ced4c2dfd35842e84f2ad35b"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-sensor-flash-r2-thread-change",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/sensor-exposure-candidates/device-reload-retry-r2/deployment.json",
+        "sha256": "86bdaea11f5f15db49f9dbe687a311781b2f6031166a92d6f3b85eca6f45802b"
+      },
+      {
+        "path": "x2d/CodeTests/sensor_exposure_candidates/Load-SensorFlashR2.ps1",
+        "sha256": "79c84fc79551f7ccf0303962946fb6922e919a566172f5fdc823c1abe27f2f4b"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-sensor-flash-r2-threads-first",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/sensor-exposure-candidates/device-reload-coverage-r2/deployment.json",
+        "sha256": "13349e996945bd571c11f14e626e1e2c91979f616d5521ceea3fc865444aee11"
+      },
+      {
+        "path": "x2d/CodeTests/sensor_exposure_candidates/Load-SensorFlashR2.ps1",
+        "sha256": "79c84fc79551f7ccf0303962946fb6922e919a566172f5fdc823c1abe27f2f4b"
+      }
+    ],
+    "markers": {}
+  },
+  {
+    "name": "x2d-ui-test-c791c85c",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/c791c85c69dfa12e/device-ui/device-input",
+        "sha256": "f8a67625e021d8f4de10fc92f4e4abc3c82d10a0bf4a6433a34d83e534570c85"
+      }
+    ],
+    "markers": {
+      "device-input": "f8a67625e021d8f4de10fc92f4e4abc3c82d10a0bf4a6433a34d83e534570c85"
+    }
+  },
+  {
+    "name": "x2d-ui3-d587476a",
+    "evidence": [
+      {
+        "path": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/d587476ae61e140f/readiness-fix-plan.json",
+        "sha256": "c50ee40ff62028c11c4182728b3a4d6514b40527918fa7b25f97a38f1187c1c0"
+      }
+    ],
+    "markers": {}
+  }
+]

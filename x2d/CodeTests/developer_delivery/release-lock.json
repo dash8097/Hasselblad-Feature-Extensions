@@ -1,0 +1,57 @@
+{
+  "schema": "X2D_DEVELOPER_RELEASE_V1",
+  "firmware": "4.2.0",
+  "model": "X2D 100C",
+  "package": "1c54fe460cadcc701eab",
+  "quarter": "software",
+  "hardware_status": "installed_and_loaded; current package capture/USB19 regression pending",
+  "mac_hardware_tested": false,
+  "build": {
+    "ui": "x2d/outputs/4.2.0/installer-hardening-r7/native-ui/arm-bridge/c81473bb3583613bfdf8",
+    "camera_operations": 0,
+    "runtime-248": {
+      "revision": "8fdbb4328dcf08b79c93",
+      "manifest": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/684f733c6e464e50/manifest.json"
+    },
+    "runtime-255": {
+      "revision": "8393c8c97e45d6efbc04",
+      "manifest": "x2d/outputs/4.2.0/raw-stack/continuous-candidate/delivery/b7110c212d00669d/manifest.json"
+    },
+    "advanced": "x2d/outputs/4.2.0/installer-hardening-r7/native-payload/revisions/343f8825ae0a2c249b34",
+    "basic": "x2d/outputs/4.2.0/installer-hardening-r7/native-payload/revisions/2123f51468b87743b195",
+    "setup-248": "x2d/outputs/4.2.0/installer-hardening-r7/native-flow/revisions/8495b2ab08214e139e70/artifacts/x2d-native-flow",
+    "setup-255": "x2d/outputs/4.2.0/installer-hardening-r7/native-flow/revisions/8afaa09e169d891574aa/artifacts/x2d-native-flow",
+    "dual": {
+      "directory": "x2d/outputs/4.2.0/installer-hardening-r7/native-host/dual-build/502217817792aa0117f2",
+      "results": {
+        "windows": {
+          "sources": "x2d/outputs/4.2.0/installer-hardening-r7/native-host/client-sources/f02cbbec6998c2f03034",
+          "compiled": "x2d/outputs/4.2.0/installer-hardening-r7/native-host/compiled/d0e083f855ef1f4e1201",
+          "assembled": "x2d/outputs/4.2.0/installer-hardening-r7/native-host/assembled/7fe5f044538130ad537f"
+        },
+        "mac": {
+          "sources": "x2d/outputs/4.2.0/installer-hardening-r7/native-host/client-sources/f57bdca5b53a1f8cf83e",
+          "compiled": "x2d/outputs/4.2.0/installer-hardening-r7/native-host/compiled/b3499acf539ec678a18f",
+          "assembled": "x2d/outputs/4.2.0/installer-hardening-r7/native-host/assembled/e60272e91fb38b39c828"
+        }
+      },
+      "errors": {},
+      "release_ready": false
+    },
+    "delivery": {
+      "directory": "x2d/outputs/4.2.0/installer-hardening-r7/native-host/delivery-candidates/1c54fe460cadcc701eab",
+      "archives": {
+        "windows": {
+          "path": "x2d\\outputs\\4.2.0\\installer-hardening-r7\\native-host\\delivery-candidates\\1c54fe460cadcc701eab\\X2D-Windows-R7-Native-Candidate.zip",
+          "sha256": "d6d99dee15c1883f91dfd989edfe8eef7b888071f80fb64116ae78f3dbcaf61a",
+          "bytes": 20225259
+        },
+        "mac": {
+          "path": "x2d\\outputs\\4.2.0\\installer-hardening-r7\\native-host\\delivery-candidates\\1c54fe460cadcc701eab\\X2D-macOS-R7-Native-Candidate.zip",
+          "sha256": "eb8bbd28caf8d93d8ad66879fb9660860a1721d5636d083bcc12e5e270dc85ea",
+          "bytes": 32878741
+        }
+      }
+    }
+  }
+}

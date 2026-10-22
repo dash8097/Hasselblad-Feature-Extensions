@@ -1,0 +1,51 @@
+#include "processing_stock_view.hpp"
+#include "processing_host.hpp"
+#include "pixel_gui_runtime.hpp"
+#include <vector>
+#include <cstring>
+#include <QQmlComponent>
+#include "qt_stock_profile.hpp"
+#include "qt_menu_profile.hpp"
+#include "qt_signal_profile.hpp"
+#include "qt_key_profile.hpp"
+#include <QKeyEvent>
+#include "qt_abi_profile.hpp"
+#include <QGuiApplication>
+#include <QQmlEngine>
+#include <QQmlContext>
+#include <QQuickWindow>
+#include <QQuickItem>
+#include <QResource>
+#include <QVariant>
+#include <QFont>
+#include <QtQuick/private/qquickmousearea_p.h>
+#include <QtQuick/private/qquickevents_p_p.h>
+#include <cstdio>
+#include <cstdlib>
+static int checks,closes,finishes;static void check(bool v,const char*n){++checks;if(!v){fprintf(stderr,"PROCESSING_STOCK_FAIL %s\n",n);exit(1);}}
+static void action(void*,x2dui::ProcessingAction a){if(a==x2dui::ProcessingAction::Finish)++finishes;else ++closes;}
+static void click(QQuickMouseArea*m){QQuickMouseEvent e;m->clicked(&e);}
+extern "C" int x2d_pixel_io_submit(X2dPixelIo*,const X2dPixelIoRequest*){std::abort();}
+extern "C" int x2d_pixel_io_poll(X2dPixelIo*,X2dPixelIoReply*){std::abort();}
+extern "C" int x2d_pixel_io_cancel(X2dPixelIo*,uint64_t){std::abort();}
+struct RuntimeIo {bool hold=false;std::vector<X2dPixelIoReply> replies;unsigned writes=0;
+ x2dui::PixelIoApi api(){return {this,[](void*opaque,const X2dPixelIoRequest*q){auto&s=*static_cast<RuntimeIo*>(opaque);s.writes+=q->write;const char*b="";if(q->endpoint==X2D_PIXEL_STATUS)b="{\"protocol\":3,\"session\":\"0123abcd\",\"ack\":0,\"busy\":false,\"ready\":true,\"heartbeat\":1,\"stage\":\"idle\"}";else if(q->endpoint==X2D_PIXEL_SHUTTER)b="{\"protocol\":1,\"ready\":true,\"arm\":\"\",\"pending\":false,\"wait_press\":0}";else if(q->endpoint==X2D_PIXEL_QUARTER_STATUS)b="QUARTER_NATIVE_READY\n";else if(!q->write)b="DISARMED\n";X2dPixelIoReply r{};r.id=q->id;r.length=std::strlen(b);std::memcpy(r.body,b,r.length);s.replies.push_back(r);return 1;},[](void*p,X2dPixelIoReply*r){auto&s=*static_cast<RuntimeIo*>(p);if(s.hold||s.replies.empty())return 0;*r=s.replies.front();s.replies.erase(s.replies.begin());return 1;},[](void*,uint64_t){return 1;}};}
+};
+int main(int argc,char**argv){QGuiApplication app(argc,argv);check(argc==2&&QResource::registerResource(QString::fromLocal8Bit(argv[1])),"fixed-original-private-fixture");auto stock=qt_stock_profile();auto menu=qt_menu_profile();auto sigprofile=qt_signal_profile();auto abi=qt_abi_profile();auto kp=qt_key_profile();QObject mapping;void*instance=&mapping;x2dui::KeyMapProfile km{&instance,&QObject::staticMetaObject,[](const void*m,const void*o)->const void*{return static_cast<const QMetaObject*>(m)->cast(static_cast<const QObject*>(o));},[](const void*,int key,unsigned,int fn){return fn==5&&key==Qt::Key_Escape;},[](const void*,int key,unsigned){return key==Qt::Key_F1;}};QQmlEngine engine;QQuickWindow window;window.resize(800,600);auto*host=new QQuickItem(window.contentItem());QQmlEngine::setContextForObject(host,engine.rootContext());
+ auto*v=x2dui::ProcessingStockView::create(stock,menu,&abi,sigprofile,host,host,x2dui::stock_create(stock,x2dui::StockKind::ExposeViewModel,host,host),action,nullptr,&kp,&km);check(v,"original-page-native-controller-created");auto*root=static_cast<QQuickItem*>(v->item());auto*t=root->findChild<QQuickMouseArea*>("PixelOverclockReturnTouch");auto*p=root->findChild<QObject*>("PixelOverclockNativeProgress");auto*c=root->findChild<QQuickItem*>("PixelOverclockNativeCountdown");check(t&&p&&c,"native-owned-components");
+ x2dui::ProcessingState s;s.present=true;s.ready=true;check(v->update(s,800,600),"idle-update");app.processEvents();check(root->isVisible()&&t->QQuickItem::isEnabled()&&t->width()==400&&t->y()==480&&t->height()==120,"touch-uses-real-bottom-area");
+ click(t);check(closes==1&&!finishes,"idle-return");s.busy=true;s.stage=x2dui::ProcessingStage::Render;s.renderTiles=3;check(v->update(s,800,600),"render-update");check(!t->QQuickItem::isEnabled()&&!root->property("showButtons").toBool(),"busy-no-return");click(t);check(closes==1,"busy-synthetic-click-rejected");
+ auto*first=static_cast<QObject*>(x2dui::stock_get_object(stock,p,"text1"));auto*second=static_cast<QObject*>(x2dui::stock_get_object(stock,p,"text2"));check(first&&second&&first->property("font").value<QFont>().weight()==QFont::Normal&&second->property("font").value<QFont>().weight()==QFont::DemiBold,"native-font-size-preserves-original-weights");
+ s.stack=true;s.stage=x2dui::ProcessingStage::Capture;s.stackRemaining=12;s.stackFrames=5;check(v->update(s,800,600),"stack-capture-update");click(t);check(finishes==1&&closes==1,"finish-only-when-allowed");check(QMetaObject::invokeMethod(root,"abortPressed"),"original-abort-signal");check(finishes==2,"original-abort-mapped");
+ s.stage=x2dui::ProcessingStage::Delay;s.countdown=u"3";check(v->update(s,800,600),"countdown-update");check(c->isVisible()&&!static_cast<QQuickItem*>(p)->isVisible(),"only-countdown-visible");
+ s.busy=false;s.stage=x2dui::ProcessingStage::Complete;check(v->update(s,800,600),"complete-update");check(p->property("progressValue").toDouble()==1,"complete-progress");window.show();root->forceActiveFocus();app.processEvents();QKeyEvent escape(QEvent::KeyPress,Qt::Key_Escape,Qt::NoModifier);QGuiApplication::sendEvent(&window,&escape);check(escape.isAccepted()&&closes==2,"native-physical-escape-returns");QKeyEvent pass(QEvent::KeyPress,Qt::Key_F1,Qt::NoModifier);QGuiApplication::sendEvent(&window,&pass);check(!pass.isAccepted()&&closes==2,"unblockable-key-passes-original-filter");
+ auto*model=static_cast<QObject*>(x2dui::stock_get_object(stock,root,"viewModel"));check(model&&model->setProperty("sideOriented",true),"orientation-fixture");app.processEvents();check(v->update(s,800,600),"side-layout-update");check(qAbs(t->x()-(800-217.6))<1e-9&&t->y()==300&&qAbs(t->width()-217.6)<1e-9&&t->height()==300,"side-touch-real-background-width");
+ check(!v->update(s,0,600),"invalid-geometry-rejected");delete host;check(!v->item()&&!v->update(s,800,600),"parent-destruction-invalidates-view");v->close();
+ host=new QQuickItem(window.contentItem());QQmlEngine::setContextForObject(host,engine.rootContext());v=x2dui::ProcessingStockView::create(stock,menu,&abi,sigprofile,host,host,x2dui::stock_create(stock,x2dui::StockKind::ExposeViewModel,host,host),action,nullptr,&kp,&km);check(v,"reopen");check(v->update(s,800,600),"reopen-update");v->close();check(!host->findChild<QQuickItem*>("PixelOverclockPage"),"explicit-close-preserves-borrowed-model");delete host;
+ QQmlEngine::setContextForObject(window.contentItem(),engine.rootContext());QQmlComponent component(&engine);component.setData("import QtQuick\nItem {objectName: \"MainViewModel_root\";property QtObject exposeScreen:null}",QUrl());auto*main=static_cast<QQuickItem*>(component.create());check(main,"main-model-fixture");main->setParent(window.contentItem());main->setParentItem(window.contentItem());auto*external=x2dui::stock_create(stock,x2dui::StockKind::ExposeViewModel,window.contentItem(),window.contentItem());check(x2dui::stock_set_object(stock,main,"exposeScreen",external),"existing-exposure-alias");
+ x2dui::FocusProfile fp{[](const void*o)->void*{return static_cast<const QQuickItem*>(o)->window();},[](const void*w)->void*{return static_cast<const QQuickWindow*>(w)->activeFocusItem();},[](void*o,int reason){static_cast<QQuickItem*>(o)->forceActiveFocus(static_cast<Qt::FocusReason>(reason));}};
+ auto*oldFocus=new QQuickItem(window.contentItem());oldFocus->forceActiveFocus();app.processEvents();x2dui::ProcessingHost attachment(stock,menu,&abi,sigprofile,kp,km,fp,action,nullptr);check(attachment.sync(window.contentItem(),true,s,800,600),"host-reads-existing-main-model");check(window.activeFocusItem()==attachment.item(),"host-takes-processing-focus");check(x2dui::stock_get_object(stock,attachment.item(),"viewModel")==external,"borrowed-original-model-identity");attachment.close(window.contentItem());check(window.activeFocusItem()==oldFocus,"host-restores-previous-live-focus");check(attachment.sync(window.contentItem(),true,s,800,600),"host-reopen");delete oldFocus;attachment.close(window.contentItem());check(!attachment.item(),"dead-return-focus-never-dereferenced");
+ {RuntimeIo io;x2dui::PixelGuiRuntime runtime(stock,menu,&abi,sigprofile,kp,km,fp,io.api());runtime.controller().set_exposure_mode(0);runtime.controller().set_image_format(0);x2dui::AlbumContext album;for(unsigned t=0;t<=500;t+=50)check(runtime.tick(window.contentItem(),t,album,800,600),"runtime-ready-poll");check(runtime.controller().state().can_start()&&runtime.controller().state().nativeReady,"runtime-real-controller-ready");io.hold=true;check(runtime.host().select(x2dui::ExtensionMode::Pixel)&&runtime.host().apply(600,album),"runtime-apply-mode-intent");check(runtime.tick(window.contentItem(),650,album,800,600),"runtime-preparation-tick");check(window.contentItem()->findChild<QQuickItem*>("PixelOverclockPreparationBubble"),"runtime-preparation-bubble");x2dui::ProtocolObject status;check(x2dui::parse_protocol("{\"protocol\":3,\"session\":\"0123abcd\",\"ack\":1,\"busy\":true,\"ready\":false,\"heartbeat\":2,\"stage\":\"capture\",\"frames\":1}",status)&&runtime.controller().accept_status(status),"runtime-capture-status");check(runtime.tick(window.contentItem(),700,album,800,600),"runtime-capture-page");auto*shown=window.contentItem()->findChild<QQuickItem*>("PixelOverclockPage");check(shown&&window.activeFocusItem()==shown,"runtime-original-page-focused");check(!runtime.host().close_processing(),"runtime-busy-close-refused");runtime.close(window.contentItem());check(!window.contentItem()->findChild<QQuickItem*>("PixelOverclockPage")&&!window.contentItem()->findChild<QQuickItem*>("PixelOverclockPreparationBubble"),"runtime-detach-owned-items");}
+ check(attachment.sync(window.contentItem(),true,s,800,600),"host-reopen-for-model-deletion");stock.object_destroy(external);check(!attachment.sync(window.contentItem(),true,s,800,600)&&!attachment.item(),"destroyed-factory-model-fails-closed");delete main;
+ printf("NATIVE_PIXEL_GUI_RUNTIME_PASS assertions=%d original_resources=4.2.0 hardware_proxies=fixtures camera_requests=0 Qt_keys_tested=1 camera_KeyFn=fixture\n",checks);
+}

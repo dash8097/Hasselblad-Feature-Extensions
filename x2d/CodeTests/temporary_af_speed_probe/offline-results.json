@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "machineCodeCases": 1402,
+  "changedCases": 219,
+  "model": [
+    {
+      "type": 0,
+      "original": 5170,
+      "candidate": 15510
+    },
+    {
+      "type": 1,
+      "original": 2585,
+      "candidate": 7755
+    },
+    {
+      "type": 2,
+      "original": 1292,
+      "candidate": 2585
+    },
+    {
+      "type": 3,
+      "original": 5170,
+      "candidate": 5170
+    },
+    {
+      "type": 4,
+      "original": 2585,
+      "candidate": 2585
+    },
+    {
+      "type": 5,
+      "original": 1292,
+      "candidate": 1292
+    }
+  ],
+  "tested": "Original AArch64 function plus original FPS adjustment executed; external getters mocked; oracle scales successful dynamic types 0/1/2 by 3/3/2; all three bounded after FPS adjustment.",
+  "restore": "byte-identical",
+  "deviceModified": false,
+  "actualMaximum": null,
+  "disassembly_sha256": "640b9c95ddf33797196248f590b1bd5a777e953ce5d88a5f14594b2c46c56fa3"
+}

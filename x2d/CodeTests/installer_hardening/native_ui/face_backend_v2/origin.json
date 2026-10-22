@@ -1,0 +1,10 @@
+{
+  "firmware": "X2D 100C 4.2.0",
+  "source": "x2d\\CodeTests\\subject_tracking\\device_hybrid_test\\face_sound",
+  "sha256": {
+    "face_lock_backend.c": "087db52302be31fc83669f9a07f99379a9cb6ad6a3005e2082eb7180cbd1b45e",
+    "face_lock_policy.h": "d19b09393cc543e9ca8cc807bb2714ce5d388ca460b6aa5689a871447b351a02",
+    "eye_af_bridge.h": "d5ae71619817cccfa0c38b46e6fe0538f2535dc64a6da672630db136cf01a497",
+    "eye_age_limit.h": "6f45d2fa275490db5b22b008e1d41292d62fb4fafa81eab8ee6586fff199069c"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "firmware": "X2D 100C 4.2.0",
+  "goal": "覆盖整套功能的离线调试环境，优先补齐四亿拍摄到成片链路",
+  "status_meaning": "这里只描述已接入能力；通过与否必须读取本次 attempt/report.json，不能以能力登记或旧报告代替",
+  "full_firmware_boot": false,
+  "all_features_integrated": false,
+  "suite": "suite.py：13个组件场景、10类功能加原厂运行库；每次新建报告，不代表完整服务拓扑",
+  "components": [
+    {
+      "id": "runtime",
+      "status": "integrated_qemu",
+      "real": "ARM64 指令、4.2.0 linker64/libc/libdl、pthread key、mmap/mprotect、Unix socket、进程退出",
+      "missing": "相机内核、驱动、SELinux、共享代码页竞争和完整启动时序"
+    },
+    {
+      "id": "400mp",
+      "status": "integrated_qemu_and_host_session",
+      "real": "当前六帧合成核心、请求归属、双消费者队列、六块显影布局、实际四合成/两输出工人及存储线程引用约束",
+      "input": "自造六帧窗口；全幅均匀色彩408158348样本和空间变化23个源行",
+      "faults": "重复请求、第二组六帧、旧回执、双消费者完成顺序、队列满、显影消费者失败、取消、短输入",
+      "missing": "真实六次拍摄、整幅RAW引用/图像池内存峰值、ISP显影、硬件JPEG、3FR/JPEG发布及相册回执"
+    },
+    {
+      "id": "1600mp",
+      "status": "integrated_component_adapter",
+      "real": "生产十六帧合成器、四线程、底边同CFA延拓；缩小图样独立参考；25块显影控制及128个失败/释放断言；拼接进度",
+      "missing": "十六帧全幅峰值与实际ISP、硬件JPEG、整条拼接及相册登记"
+    },
+    {
+      "id": "25mp",
+      "status": "integrated_qemu_and_original_arm_adapter",
+      "real": "完整自造一亿NV16缩小逐字节参考；原厂RAW回调及JPEG插件有界ARM执行；质量80参数与软件编码解码",
+      "related_existing_test": "x2d/CodeTests/pixel_shift_rgb/check_quarter_upstream.py",
+      "missing": "真实ION、硬件质量80编码、机内启动挂接及跨服务时序"
+    },
+    {
+      "id": "raw_stack",
+      "status": "integrated_qemu_and_worker_adapter",
+      "real": "生产32位累计；五种组合10003帧/65535帧边界；实际常驻工人；复制后归还、等待帧交接、延迟分配、拒收及ISO计算",
+      "missing": "实际连续曝光、真实Qt引用归还线程与DMA、全幅吞吐、末帧显影发布"
+    },
+    {
+      "id": "precapture",
+      "status": "integrated_component_adapter",
+      "related_existing_directory": "x2d/CodeTests/liveview_precapture",
+      "real": "原厂NV12描述符ARM执行、一秒队列、60帧冻结、并发竞争/失败释放、60张JPEG编码及软件解码",
+      "missing": "真实取景DMA、普通拍照并行时序及相机内存峰值"
+    },
+    {
+      "id": "afc_afs",
+      "status": "integrated_original_arm_adapter",
+      "related_existing_test": "x2d/CodeTests/afc_observer/check_afc_cdaf_speed_types.py",
+      "real": "原厂反差速度/距离分类调用、当前一帧等待候选、评分/旧帧与模式切换；AF-S/MF保持原逻辑",
+      "missing": "实际相位输入、镜头闭环/运动标定、真实白墙与多目标光学场景"
+    },
+    {
+      "id": "face_eye",
+      "status": "integrated_qt_adapter",
+      "related_existing_directory": "x2d/CodeTests/face_edge_fix",
+      "real": "冻结package-fallback的Qt人脸/眼框、白绿状态、旧回执拒绝；当前EyePreferencePolicy.js",
+      "missing": "真实识别输入与镜头合焦；冻结人脸QML不等于当前安装器"
+    },
+    {
+      "id": "ui_power_settings",
+      "status": "integrated_qt_adapter",
+      "related_existing_test": "x2d/CodeTests/display_controls/check_liveview.py",
+      "real": "当前像素超频/堆栈QML真实file GET/PUT与点击、防重复、旧回执；取景超时设置/参数页计时",
+      "missing": "Qt任务服务端为替身，未与同一运行中的原厂D-Bus服务连通；不测物理功耗"
+    },
+    {
+      "id": "install_uninstall_recovery",
+      "status": "integrated_qemu_transaction_adapter",
+      "related_existing_directory": "x2d/CodeTests/installer_hardening/camera_native",
+      "real": "默认新构建事务或显式选择冻结源码/ELF；两者均重新执行卸载残留、安装入口拒绝、安装模型、映射失败/重启失败回退；快照不代表正在修改的安装器",
+      "missing": "安装模型替换3项硬件载荷；真实分区/exFAT、设备握手、Windows/Mac安装器全包验收"
+    },
+    {
+      "id": "raw_jpeg_mobile",
+      "status": "integrated_original_arm_and_software_codec_adapter",
+      "related_existing_test": "x2d/CodeTests/pixel_shift_rgb/check_mobile_jpeg_r50.py",
+      "real": "全尺寸四亿/十六亿JPEG质量80/60编码解码；原RAW合成头元数据到JPEG白名单、预览、MPF、4K对齐；安卓Phocus1.0.2有界有效性分支正负例",
+      "missing": "完整RAW解码/镜头校正、完整Phocus程序及Wi-Fi；不证明历史暗角问题修复"
+    },
+    {
+      "id": "hardware",
+      "status": "unmodeled",
+      "missing": "传感器曝光、IBIS/像素平移、镜头/快门/闪光、ISP、DMA和硬件编解码器、真实功耗和吞吐"
+    }
+  ]
+}

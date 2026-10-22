@@ -1,0 +1,166 @@
+{
+  "schema": "CAMERA_UI_MATRIX_V1",
+  "adapter": "x2d-4.2.0",
+  "groups": [
+    {
+      "id": "S1",
+      "bit_depth": 14,
+      "focus": "AF-S",
+      "recognition": "off",
+      "method": "average",
+      "previous_drive": "Single",
+      "parameter_change": "ISO",
+      "target_frames": 10,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "S2",
+      "bit_depth": 16,
+      "focus": "AF-S",
+      "recognition": "face",
+      "method": "max",
+      "previous_drive": "Continuous",
+      "parameter_change": "aperture",
+      "target_frames": 10,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "S3",
+      "bit_depth": 14,
+      "focus": "AF-S",
+      "recognition": "eye",
+      "method": "min",
+      "previous_drive": "SelfTimer",
+      "parameter_change": "shutter",
+      "target_frames": 10,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "S4",
+      "bit_depth": 16,
+      "focus": "AF-C",
+      "recognition": "off",
+      "method": "average",
+      "previous_drive": "Interval",
+      "parameter_change": "ISO",
+      "target_frames": 10,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "S5",
+      "bit_depth": 14,
+      "focus": "AF-C",
+      "recognition": "face",
+      "method": "max",
+      "previous_drive": "ExposureBracketing",
+      "parameter_change": "aperture",
+      "target_frames": 10,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "S6",
+      "bit_depth": 16,
+      "focus": "AF-C",
+      "recognition": "eye",
+      "method": "min",
+      "previous_drive": "FocusBracketing",
+      "parameter_change": "shutter",
+      "target_frames": 10,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "S7",
+      "bit_depth": 14,
+      "focus": "MF",
+      "recognition": "off",
+      "method": "average",
+      "previous_drive": "Pixel",
+      "parameter_change": "bitdepth",
+      "target_frames": 10,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "S8",
+      "bit_depth": 16,
+      "focus": "MF",
+      "recognition": "face",
+      "method": "max",
+      "previous_drive": "Single",
+      "parameter_change": "ISO",
+      "target_frames": 10,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "S9",
+      "bit_depth": 14,
+      "focus": "MF",
+      "recognition": "eye",
+      "method": "min",
+      "previous_drive": "Continuous",
+      "parameter_change": "aperture",
+      "target_frames": 10,
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "U1",
+      "description": "设置→曝光：动画行可完整滑入屏幕；弹窗打开/选择/取消/退出重入，字号与原厂比较",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "U2",
+      "description": "设置→显示：屏幕调参、息屏选择和自适应说明；验证两层Loader坐标与弹窗边界",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "U3",
+      "description": "自动电子引闪：14位1/5↔1/6；16位0.4↔0.3；机械快门退出附加脉冲；无开关/延迟行",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "U4",
+      "description": "连续菜单/参数弹窗操作、触屏和物理键应用；内部回调耗时只作诊断，不当作显示帧率",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "U5",
+      "description": "A/S/P各扩展入口点击不准备，M恢复；原厂拍摄模式切入、退出与按键确认",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "T14",
+      "description": "14位平均/最大/最小各完整60秒；含历史MF/最大/ISO200/f5/电子1/250条件的吞吐对照",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "T16",
+      "description": "16位平均/最大/最小各完整60秒；单列速度，不套用14位50帧基线",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "P25",
+      "description": "25MP RAW+JPEG：UI选择并实际拍摄，确认RAW和JPEG路径及最终状态，不下载照片",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "P400",
+      "description": "400MP：UI实际六帧、保存、恢复后可再进入",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "P1600",
+      "description": "1600MP：UI实际16帧、保存、保持/退出与重入",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "R1",
+      "description": "堆栈退出→改快门/光圈/ISO/位深→再进入与拍摄；九组代表组合之外的边界",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "R2",
+      "description": "倒计时/完成/错误返回；不得把无法取消或恢复未就绪算为通过",
+      "result": "NOT_RUN"
+    }
+  ],
+  "execution": "UI input only; exact package manifest, firmware and idle preflight required; no inherited results"
+}
