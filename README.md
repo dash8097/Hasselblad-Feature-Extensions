@@ -50,3 +50,52 @@
 二维码有效期至 2026 年 10 月 29 日；失效后需更新。
 
 [源码与使用范围](PUBLIC_DISTRIBUTION_POLICY.md)
+
+---
+
+## English
+
+### Hasselblad Camera Feature Extensions
+
+Independent, unofficial camera-feature components, algorithms, build scripts, and automated tests. The current source primarily targets the **first-generation Hasselblad X2D 100C with firmware 4.2.0**.
+
+> **Warning: modifying camera firmware or installing unofficial patches can brick your camera or prevent normal operation. Understand the risks before making changes.**
+
+### Feature overview
+
+This table describes the capabilities covered by the source. Available code, build entry points, and offline checks do not establish that every feature has passed camera acceptance testing or works with other models, firmware versions, or lenses.
+
+| Feature | Description | Source |
+| --- | --- | --- |
+| RAW stacking | Average, maximum, and minimum accumulation; background processing, buffer return, progress, cancellation, and failure recovery. | [Stack implementation](x2d/CodeTests/raw_stack_continuous/) |
+| ISO stacking | Plan frame counts for a target ISO, check exposure consistency, and record the actual accumulation result. | [Stack task control](x2d/CodeTests/raw_stack_continuous/native_stack_runner.cpp) |
+| 25 MP output | Quarter-resolution RAW / JPEG processing, including downscaling, quality settings, and encoding paths. | [Image processing](x2d/CodeTests/pixel_shift_rgb/) |
+| 400 MP MultiShot | Six-frame pixel-shift composition with in-memory capture handling, worker threads, rendering, and output paths. | [Six-frame composition](x2d/CodeTests/pixel_shift_rgb/capture_memory_merge.c) |
+| 1,600 MP MultiShot | Sixteen-frame composition, tiled processing, and JPEG stitching. Practical availability depends on memory, runtime inputs, and acceptance results for the corresponding version. | [Composition and output](x2d/CodeTests/pixel_shift_rgb/) |
+| Live-view precapture candidate | A ring buffer retains up to 60 live-view frames from the previous second and freezes valid frames on a full shutter press. These are live-view images rather than full-resolution RAW captures; actual DMA, frame rate, and peak memory require device validation. | [Precapture buffer](x2d/CodeTests/liveview_precapture/) |
+| Autofocus control research | AF-S / AF-C / MF state and entry points, phase-detection scores, stability waiting, and contrast-search speed transitions. This does not establish continuous-focus or lens-control performance. | [Autofocus checks](x2d/CodeTests/afc_observer/) |
+| Face, eye, and target selection | Target locking, eye preference, focus-box display, and edge handling. Actual recognition and optical focus require separate acceptance testing. | [Target selection](x2d/CodeTests/subject_tracking/) / [Face edge handling](x2d/CodeTests/face_edge_fix/) |
+| Camera interface | Components for drive modes, task progress, focus icons, parameter dialogs, shutter animations, and sound policies. | [Interface components](x2d/CodeTests/installer_hardening/native_ui/) |
+| Display and power policies | Live-view timeout, parameter-page behavior, screen-off handling, and related settings. Offline timing does not measure physical power consumption. | [Display controls](x2d/CodeTests/display_controls/) |
+| Electronic-shutter flash research | Candidates and tests for synchronization, waiting conditions, and timing policies. Universal flash compatibility is not established. | [Exposure and synchronization](x2d/CodeTests/sensor_exposure_candidates/) |
+| RAW / JPEG interoperability | File headers, metadata, previews, quality settings, alignment, and mobile compatibility checks. Complete RAW decoding, lens correction, and Wi-Fi transfer still require validation with the relevant software. | [Output and interoperability](x2d/CodeTests/pixel_shift_rgb/) |
+| Windows / macOS installer builds | Source for basic and advanced configurations, file verification, installation, a shared uninstall flow, rollback, and diagnostics. External build inputs and toolchains are required; native macOS USB and camera behavior need separate acceptance testing. | [Installer](x2d/CodeTests/installer_hardening/) / [Build entry](x2d/CodeTests/developer_delivery/README.md) |
+| Auto Test and UI Test | Offline checks, 21 UI test groups, and device drivers for foreground menus, shutter actions, mode transitions, completion, and error recovery. Test definitions are not passing execution results. | [Test entry](x2d/CodeTests/developer_delivery/README.md) / [Device UI drivers](x2d/FunctionalTests/multishot_ui/) |
+| Offline debugging environment | Component scenarios for composition, stacking, precapture, autofocus, UI, installation, removal, and file interoperability. It does not boot complete camera firmware or all camera services. | [Scenario suite](x2d/CodeTests/firmware_simulator/suite.py) / [Coverage](x2d/CodeTests/firmware_simulator/coverage.json) |
+
+### Building and validation
+
+Start with the [build and test entry](x2d/CodeTests/developer_delivery/README.md) and [version record](x2d/CodeTests/developer_delivery/release-lock.json). Prepare the required external inputs, toolchains, and runtime environments. This repository is a source distribution rather than a ready-made camera installer.
+
+- `python scripts/check_sources.py`: check source integrity, Python syntax, and local links.
+- `python scripts/test_components.py --compiler <zig> --output <output>`: run standalone algorithm tests.
+- [UI test matrix](x2d/CodeTests/developer_delivery/ui_matrix.json): review the defined test groups and their recorded status.
+- [Source manifest](source-files.json): inspect per-file checksums.
+
+Offline tests, successful compilation, and device acceptance are separate results. Hardware UI tests require an authorized camera and an appropriate environment; macOS device testing and complete package acceptance must be checked for the exact version in use.
+
+### Developer discussion group
+
+The group is for camera-feature development, research, issue feedback, and technical discussion. Use the [group QR code](docs/assets/developer-group-20261022.jpg) shown above to join. It is valid until **October 29, 2026** and needs replacement after expiration.
+
+[Source and usage scope](PUBLIC_DISTRIBUTION_POLICY.md)
